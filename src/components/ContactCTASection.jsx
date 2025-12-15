@@ -47,7 +47,7 @@ export function ContactCTASection() {
             >
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-cyan-400" />
-                <div><strong>Email:</strong> support@tutelartechlabs.com</div>
+                <div><strong>Email:</strong> sales@tutelartechlabs.com</div>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-cyan-400" />
