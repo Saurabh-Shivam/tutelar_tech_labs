@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security Operation | Tutelar Tech Labs</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #05060b;
+      --card: #0d1020;
+      --accent: #0abcf9;
+      --text: #e8ecf2;
+      --muted: #9aa4b5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 20% 15%, #0abcf914, transparent 35%),
+                  radial-gradient(circle at 75% 20%, #6a4dfb18, transparent 40%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 48px 20px 72px;
+    }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 36px; margin-bottom: 12px; }
+    h2 { font-size: 24px; margin: 32px 0 12px; }
+    p { margin: 12px 0; color: var(--muted); }
+    ul { color: var(--muted); padding-left: 20px; }
+    .card {
+      background: linear-gradient(145deg, #0f132b, #0b0e1e);
+      border: 1px solid #ffffff1a;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 15px 60px #00000045, 0 0 0 1px #0abcf910;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #0abcf915;
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 12px;
+      border: 1px solid #0abcf930;
+    }
+    a.btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #04101a;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 10px 30px #0abcf955;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap card">
+    <span class="pill">Security Operation</span>
+    <h1>Always-On Detection and Response</h1>
+    <p>
+      Our security operations service gives you 24/7 monitoring, investigation,
+      and guided remediation to contain threats before they become incidents.
+    </p>
+
+    <h2>What We Cover</h2>
+    <ul>
+      <li>SIEM engineering, log enrichment, and detection tuning</li>
+      <li>Managed detection and response with threat hunting</li>
+      <li>Playbooks for containment, triage, and recovery</li>
+      <li>Endpoint and identity telemetry wired into one view</li>
+      <li>Post-incident reviews with prioritized hardening steps</li>
+    </ul>
+
+    <h2>How We Deliver</h2>
+    <p>
+      We integrate with your existing tools, streamline alert noise, and
+      operate with clear SLAs. You get concise incident narratives and
+      actionable guidance so teams can respond quickly and confidently.
+    </p>
+
+    <a class="btn" href="/">Back to main site</a>
+  </div>
+</body>
+</html>
