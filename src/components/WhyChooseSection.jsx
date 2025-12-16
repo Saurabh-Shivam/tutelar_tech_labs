@@ -27,13 +27,13 @@ const features = [
 
 export function WhyChooseSection() {
   return (
-    <section id="why-choose-us" className="section py-20 text-white">
+    <section id="why-choose-us" className="section py-20 dark:text-white text-black">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
             Why Choose Us
           </h2>
-          <p className="text-center text-gray-400 max-w-3xl mx-auto mb-12">
+          <p className="text-center dark:text-gray-400 text-gray-700 max-w-3xl mx-auto mb-12">
             We deliver high-performance cybersecurity solutions backed by cutting-edge technology and world-class expertise.
           </p>
         </AnimatedSection>
@@ -42,7 +42,7 @@ export function WhyChooseSection() {
           {features.map((feature, index) => (
             <AnimatedSection key={index} delay={index * 0.2}>
               <motion.div
-                className="p-8 rounded-xl bg-[#0D0F1A] border border-white/10 hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/15 transition-all"
+                className="p-8 rounded-xl dark:bg-[#0D0F1A] bg-white border dark:border-white/10 border-black/10 hover:border-cyan-500/50 hover:shadow-xl dark:hover:shadow-cyan-500/15 hover:shadow-black/10 transition-all"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -57,10 +57,10 @@ export function WhyChooseSection() {
                   {feature.icon}
                 </motion.div>
 
-                <h4 className="text-xl mb-2 text-white">
+                <h4 className="text-xl mb-2 dark:text-white text-black">
                   {feature.title}
                 </h4>
-                <p className="text-gray-400">
+                <p className="dark:text-gray-400 text-gray-700">
                   {feature.description}
                 </p>
               </motion.div>

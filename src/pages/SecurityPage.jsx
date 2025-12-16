@@ -37,10 +37,10 @@ export function SecurityPage({ pageKey }) {
 
   if (!data) {
     return (
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen dark:bg-black dark:text-white bg-white text-black">
         <Navbar />
         <div className="pt-32 px-6 max-w-5xl mx-auto">
-          <p className="text-xl text-gray-300">Content coming soon.</p>
+          <p className="text-xl dark:text-gray-300 text-gray-900">Content coming soon.</p>
         </div>
         <Footer />
       </div>
@@ -48,9 +48,9 @@ export function SecurityPage({ pageKey }) {
   }
 
   return (
-    <div className="relative min-h-screen text-white overflow-hidden">
+    <div className="relative min-h-screen dark:text-white text-black overflow-hidden">
       <PageBackground />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-slate-950/14 to-black/45" />
+      <div className="pointer-events-none absolute inset-0 dark:bg-gradient-to-b dark:from-black/30 dark:via-slate-950/14 dark:to-black/45 bg-gradient-to-b from-white/40 via-slate-200/20 to-white/50" />
       <Navbar />
 
       <motion.main
@@ -83,12 +83,12 @@ export function SecurityPage({ pageKey }) {
         </motion.div>
 
         <motion.section
-          className="bg-white/5 border border-white/10 rounded-2xl p-8 shadow-lg shadow-cyan-500/10"
+          className="dark:bg-white/5 dark:border dark:border-white/10 bg-black/5 border border-black/10 rounded-2xl p-8 shadow-lg dark:shadow-cyan-500/10 shadow-black/10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
         >
-          <div className="space-y-4 text-lg text-gray-200 leading-relaxed">
+          <div className="space-y-4 text-lg dark:text-gray-200 text-gray-700 leading-relaxed">
             {data.details.map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
             ))}
@@ -105,7 +105,7 @@ export function SecurityPage({ pageKey }) {
             {data.images.map((image, idx) => (
               <motion.div
                 key={image.alt}
-                className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                className="relative overflow-hidden rounded-2xl border dark:border-white/10 border-black/10 dark:bg-white/5 bg-black/5"
                 variants={imageVariants}
                 whileHover={{
                   scale: 1.08,

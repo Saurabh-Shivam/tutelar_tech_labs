@@ -27,26 +27,26 @@ const steps = [
 
 export function ProcessSection() {
   return (
-    <section id="process" className="section py-20 text-white">
+    <section id="process" className="section py-20 dark:text-white text-black">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
             Our Process
           </h2>
-          <p className="text-center text-gray-400 max-w-3xl mx-auto mb-12">
+          <p className="text-center dark:text-gray-400 text-gray-700 max-w-3xl mx-auto mb-12">
             A streamlined and effective approach to securing your organization.
           </p>
         </AnimatedSection>
 
         <div className="relative">
           {/* Timeline Vertical Line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l border-white/10"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l dark:border-white/10 border-black/10"></div>
 
           <div className="grid md:grid-cols-2 gap-12 mt-12">
             {steps.map((step, index) => (
               <AnimatedSection key={index} delay={index * 0.2}>
                 <motion.div
-                  className="relative p-8 rounded-xl bg-black border border-white/10 hover:border-cyan-500/40 hover:shadow-xl hover:shadow-cyan-500/10 transition-all"
+                  className="relative p-8 rounded-xl dark:bg-black bg-white border dark:border-white/10 border-black/10 hover:border-cyan-500/40 hover:shadow-xl dark:hover:shadow-cyan-500/10 hover:shadow-black/10 transition-all"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
@@ -61,7 +61,7 @@ export function ProcessSection() {
                   <div className="flex flex-col gap-4">
                     <div className="text-cyan-500">{step.icon}</div>
                     <h3 className="text-2xl font-semibold">{step.title}</h3>
-                    <p className="text-gray-400">{step.description}</p>
+                    <p className="dark:text-gray-400 text-gray-700">{step.description}</p>
                   </div>
 
                   {/* Arrow Animation */}

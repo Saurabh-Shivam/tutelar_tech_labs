@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Lightbulb } from "lucide-react";
 
 export function Navbar() {
   const navigate = useNavigate();
@@ -9,6 +9,13 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
+  const [theme, setTheme] = useState(() => {
+    try {
+      return localStorage.getItem("theme") || "dark";
+    } catch {
+      return "dark";
+    }
+  });
   const closeDropdownTimeout = useRef(null);
 
   const openDropdownWithLabel = (label) => {
@@ -36,6 +43,21 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.remove("dark");
+    if (theme === "dark") {
+      root.classList.add("dark");
+    }
+    try {
+      localStorage.setItem("theme", theme);
+    } catch {}
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
   const navItems = [
     { label: "Home", id: "home" },
@@ -147,7 +169,7 @@ export function Navbar() {
     <motion.nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-black/80 backdrop-blur-lg border-b border-white/10"
+          ? "dark:bg-black/80 bg-white/80 backdrop-blur-lg border-b dark:border-white/10 border-black/10"
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -214,7 +236,7 @@ export function Navbar() {
 
                   {openDropdown === item.label && (
                     <motion.div
-                      className="absolute left-0 top-full mt-1 w-60 rounded-lg bg-black/95 border border-white/10 shadow-lg shadow-black/40 backdrop-blur-xl py-3 z-50"
+                      className="absolute left-0 top-full mt-1 w-60 rounded-lg dark:bg-black/95 bg-white border dark:border-white/10 border-black/10 shadow-lg dark:shadow-black/40 shadow-black/10 backdrop-blur-xl py-3 z-50"
                       initial={{ opacity: 0, y: -6 }}
                       animate={{ opacity: 1, y: 0 }}
                       onMouseEnter={() => openDropdownWithLabel(item.label)}
@@ -229,7 +251,7 @@ export function Navbar() {
                             subItem.newTab ? "noopener noreferrer" : undefined
                           }
                           onClick={(e) => handleNavClick(e, subItem)}
-                          className="block w-full text-left px-4 py-2 text-sm hover:bg-white/5 hover:text-cyan-400 transition-colors"
+                          className="block w-full text-left px-4 py-2 text-sm hover:dark:bg-white/5 hover:bg-black/5 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
                         >
                           {subItem.label}
                         </a>
@@ -283,6 +305,20 @@ export function Navbar() {
           >
             Get in touch
           </motion.button>
+          <motion.button
+            onClick={toggleTheme}
+            className="ml-2 p-2 rounded-full dark:bg-white/10 bg-black/10 border dark:border-white/10 border-black/10 hover:dark:bg-white/20 hover:bg-black/20 transition-all cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            title={theme === "dark" ? "Light mode" : "Dark mode"}
+          >
+            {theme === "dark" ? (
+              <Lightbulb className="w-5 h-5 text-yellow-400" />
+            ) : (
+              <Moon className="w-5 h-5 text-cyan-600" />
+            )}
+          </motion.button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -300,7 +336,7 @@ export function Navbar() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <motion.div
-            className="absolute top-full left-0 w-full bg-black/90 backdrop-blur-lg shadow-lg border-t border-white/10 md:hidden"
+            className="absolute top-full left-0 w-full dark:bg-black/90 bg-white/90 backdrop-blur-lg shadow-lg border-t dark:border-white/10 border-black/10 md:hidden"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
           >
@@ -398,6 +434,20 @@ export function Navbar() {
                 whileTap={{ scale: 0.95 }}
               >
                 Get in touch
+              </motion.button>
+              <motion.button
+                onClick={toggleTheme}
+                className="p-2 rounded-full dark:bg-white/10 bg-black/10 border dark:border-white/10 border-black/10 hover:dark:bg-white/20 hover:bg-black/20 transition-all cursor-pointer"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              >
+                {theme === "dark" ? (
+                  <Lightbulb className="w-5 h-5 text-yellow-400" />
+                ) : (
+                  <Moon className="w-5 h-5 text-cyan-600" />
+                )}
               </motion.button>
             </div>
           </motion.div>

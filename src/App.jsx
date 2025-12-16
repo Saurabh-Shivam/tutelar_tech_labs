@@ -31,7 +31,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
+    <div className="min-h-screen dark:bg-black dark:text-white bg-white text-black overflow-x-hidden relative">
       <GlobalGrid />
       <MatrixRain />
       <NetworkGrid />

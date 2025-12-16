@@ -17,7 +17,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative bg-black border-t border-white/10 py-16 overflow-hidden">
+    <footer className="relative dark:bg-black bg-white border-t dark:border-white/10 border-black/10 py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
@@ -30,7 +30,7 @@ export function Footer() {
               /> */}
               <span className="text-2xl font-bold">Tutelar Tech Labs</span>
             </div>
-            <p className="text-gray-400 mb-6 max-w-md">
+            <p className="dark:text-gray-400 text-gray-600 mb-6 max-w-md">
               Advanced cybersecurity solutions protecting your digital future with cutting-edge technology and expert insights.
             </p>
             {/* Social Links */}
@@ -39,7 +39,7 @@ export function Footer() {
                 <motion.a
                   key={index}
                   href={social.href}
-                  className="p-3 bg-[#0D0F1A] border border-white/10 rounded-lg hover:border-cyan-500/40 hover:bg-cyan-500/10 transition-all"
+                  className="p-3 dark:bg-[#0D0F1A] bg-black/5 border dark:border-white/10 border-black/10 rounded-lg hover:border-cyan-500/40 hover:dark:bg-cyan-500/10 hover:bg-black/10 transition-all"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label={social.label}
@@ -56,7 +56,7 @@ export function Footer() {
             <ul className="space-y-2">
               {links.product.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  <a href="#" className="dark:text-gray-400 text-gray-700 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
                     {link}
                   </a>
                 </li>
@@ -70,7 +70,7 @@ export function Footer() {
             <ul className="space-y-2">
               {links.company.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  <a href="#" className="dark:text-gray-400 text-gray-700 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
                     {link}
                   </a>
                 </li>
@@ -84,7 +84,7 @@ export function Footer() {
             <ul className="space-y-2">
               {links.resources.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  <a href="#" className="dark:text-gray-400 text-gray-700 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
                     {link}
                   </a>
                 </li>
@@ -94,8 +94,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">
+        <div className="pt-8 border-t dark:border-white/10 border-black/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="dark:text-gray-400 text-gray-700 text-sm">
             © {new Date().getFullYear()} Tutelar Tech Labs. All rights reserved.
           </p>
           <div className="flex gap-6">
@@ -103,7 +103,7 @@ export function Footer() {
               <motion.a
                 key={index}
                 href="#"
-                className="text-gray-400 hover:text-cyan-400 text-sm transition-colors"
+                className="dark:text-gray-400 text-gray-700 hover:text-cyan-600 dark:hover:text-cyan-400 text-sm transition-colors"
                 whileHover={{ scale: 1.05 }}
               >
                 {link}

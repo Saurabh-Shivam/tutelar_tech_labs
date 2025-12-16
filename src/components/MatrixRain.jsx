@@ -6,12 +6,12 @@ export function MatrixRain() {
 
   useEffect(() => {
     const updateColumns = () => {
-      const columnCount = Math.floor(window.innerWidth / 20);
+      const columnCount = Math.min(36, Math.floor(window.innerWidth / 24));
       const newColumns = Array.from({ length: columnCount }, (_, i) => ({
         id: i,
         delay: Math.random() * 2,
-        speed: 0.5 + Math.random() * 0.5,
-        chars: Array.from({ length: 20 }, () => 
+        speed: 0.6 + Math.random() * 0.6,
+        chars: Array.from({ length: 18 }, () => 
           Math.random() > 0.5 ? '0' : '1'
         ),
       }));
@@ -24,7 +24,10 @@ export function MatrixRain() {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div
+      className="fixed inset-0 pointer-events-none overflow-hidden z-0"
+      style={{ contain: 'layout paint', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
+    >
       {columns.map((column) => (
         <motion.div
           key={column.id}
@@ -37,7 +40,7 @@ export function MatrixRain() {
           initial={{ y: '-100vh' }}
           animate={{ y: '200vh' }}
           transition={{
-            duration: 10 / column.speed,
+            duration: 12 / column.speed,
             repeat: Infinity,
             delay: column.delay,
             ease: 'linear',
@@ -48,8 +51,8 @@ export function MatrixRain() {
               key={idx}
               className="mb-1"
               style={{
-                opacity: 1.5 - idx * 0.05,
-                textShadow: '0 0 4px rgba(10, 188, 249, 0.6)',
+                opacity: 1.3 - idx * 0.05,
+                textShadow: '0 0 1px rgba(10, 188, 249, 0.35)',
               }}
             >
               {char}

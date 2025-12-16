@@ -1,10 +1,18 @@
-import { motion } from 'motion/react';
-import { AnimatedSection } from './AnimatedSection';
-import { Cpu, Server, Database } from 'lucide-react';
+import { motion } from "motion/react";
+import { AnimatedSection } from "./AnimatedSection";
+import { Cpu, Server, Database, CheckCircle2 } from "lucide-react";
 
 export function AboutSection() {
+  const differentiators = [
+    "Domain-Focused Expertise with continuous tracking of evolving threats and compliance needs.",
+    "Tailored Security Solutions aligned to each client’s risk posture, infrastructure, and business goals.",
+    "Trusted by OEMs and Enterprises through strong partnerships with leading cybersecurity vendors.",
+    "Global Delivery Model supporting multi-region implementations and managed services.",
+    "End-to-End Ownership from assessment and PoC to deployment and post-sales support.",
+  ];
+
   return (
-    <section id="about" className="section relative py-32 overflow-hidden">
+    <section id="about" className="relative py-32 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#6A4DFB] opacity-20 blur-[120px] rounded-full" />
@@ -13,47 +21,71 @@ export function AboutSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left side - Text content */}
+          {/* Left side - Text */}
           <AnimatedSection>
-            <p className="text-cyan-300 uppercase tracking-[0.3em] text-xs mb-3">
+            <p className="text-cyan-300 uppercase tracking-[0.35em] text-xs mb-4">
               Services Redefined
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              One Partner. End-to-End Cybersecurity.
+
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              One Partner.
+              <span className="block text-cyan-400 mt-2">
+                End-to-End Cybersecurity.
+              </span>
             </h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-8">
-              Tutelar Tech Labs, headquartered in Bangalore with a regional office in Madurai, was founded in 2022 to deliver specialized cybersecurity and network solutions. We secure enterprise environments through deep domain expertise, advanced technology integration, and a customer-centric approach.
+
+            <p className="dark:text-gray-300 text-gray-800 text-lg leading-relaxed max-w-xl mb-12">
+              Tutelar Tech Labs, headquartered in Bangalore with a regional office
+              in Madurai, was founded in 2022 to deliver specialized cybersecurity
+              and network solutions. We secure enterprise environments through
+              deep domain expertise, advanced technology integration, and a
+              customer-centric approach.
             </p>
 
-            <div className="space-y-8">
-              <div>
-                <h4 className="text-2xl font-semibold mb-2">What Sets Us Apart</h4>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
-                  <li>Domain-Focused Expertise: We track evolving threats and regulatory needs across sectors.</li>
-                  <li>Tailored Security Solutions: Architected to each client’s risk posture, infrastructure, and goals.</li>
-                  <li>Trusted by OEMs and Clients: Strong partnerships with top-tier cybersecurity OEMs.</li>
-                  <li>Global Delivery Model: Implementations and services delivered across geographies.</li>
-                  <li>End-to-End Project Ownership: From assessment and PoC to deployment and post-sales support.</li>
-                </ul>
-              </div>
+            {/* What sets us apart */}
+            <div className="mb-14">
+              <h4 className="text-2xl font-semibold mb-6">
+                What Sets Us Apart
+              </h4>
 
-              <div>
-                <h4 className="text-2xl font-semibold mb-2">Our Goal</h4>
-                <p className="text-gray-300">
-                  We act as a strategic partner—helping clients build resilient, compliant, and future-ready security ecosystems.
-                </p>
+              <div className="space-y-5">
+                {differentiators.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-start gap-4 p-4 rounded-xl dark:bg-white/5 bg-black/5 dark:border-white/10 border-black/10 hover:border-cyan-400/40 transition-colors"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <CheckCircle2 className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-0.5" />
+                    <p className="dark:text-gray-300 text-gray-900 leading-relaxed">
+                      {item}
+                    </p>
+                  </motion.div>
+                ))}
               </div>
+            </div>
+
+            {/* Goal */}
+            <div className="max-w-xl">
+              <h4 className="text-2xl font-semibold mb-3">Our Goal</h4>
+              <p className="dark:text-gray-300 text-gray-900 leading-relaxed">
+                We act as a strategic partner, helping organizations build
+                resilient, compliant, and future-ready security ecosystems that
+                evolve with their business.
+              </p>
             </div>
           </AnimatedSection>
 
-          {/* Right side - Animated icons */}
+          {/* Right side - Visuals */}
           <AnimatedSection>
-            <div className="grid grid-cols-3 gap-10">
+            <div className="grid grid-cols-3 gap-10 mb-16">
               {[Cpu, Server, Database].map((Icon, index) => (
                 <motion.div
                   key={index}
-                  className="flex justify-center items-center w-24 h-24 rounded-full bg-black border border-white/10 shadow-xl shadow-cyan-500/5 hover-lift"
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  className="flex justify-center items-center w-24 h-24 rounded-full dark:bg-black bg-white dark:border-white/10 border-black/10 shadow-xl dark:shadow-cyan-500/10 shadow-black/10"
+                  initial={{ opacity: 0, scale: 0.85 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
@@ -62,9 +94,9 @@ export function AboutSection() {
               ))}
             </div>
 
-            {/* Cyber radar animation */}
-            <div className="mt-16 relative w-full h-64 bg-gradient-to-b from-[#0B0D17] to-[#090b11] border border-cyan-500/30 rounded-xl overflow-hidden shadow-2xl shadow-cyan-500/20">
-              {/* Radar concentric circles */}
+            {/* Radar */}
+            <div className="relative w-full h-64 dark:bg-gradient-to-b dark:from-[#0B0D17] dark:to-[#090b11] bg-gradient-to-b from-white to-slate-100 border border-cyan-500/30 rounded-xl overflow-hidden shadow-2xl dark:shadow-cyan-500/20 shadow-black/10">
+              {/* Rings */}
               <div className="absolute inset-0 flex items-center justify-center">
                 {[1, 2, 3, 4].map((ring) => (
                   <div
@@ -78,85 +110,31 @@ export function AboutSection() {
                 ))}
               </div>
 
-              {/* Center crosshair */}
+              {/* Crosshair */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-1 h-full bg-cyan-400/20" />
-                <div className="absolute w-full h-1 bg-cyan-400/20" />
+                <div className="w-px h-full bg-cyan-400/20" />
+                <div className="absolute w-full h-px bg-cyan-400/20" />
               </div>
 
-              {/* Pulsating center */}
+              {/* Pulse */}
               <motion.div
                 className="absolute inset-0 flex items-center justify-center"
                 animate={{ opacity: [0.6, 1, 0.6] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 2, repeat: Infinity }}
               >
                 <div className="w-8 h-8 rounded-full bg-cyan-400/60 blur-sm" />
                 <div className="absolute w-4 h-4 rounded-full bg-cyan-400" />
               </motion.div>
 
-              {/* Sweeping radar arc - more visible */}
+              {/* Sweep */}
               <motion.div
                 className="absolute inset-0"
                 style={{
                   background:
-                    'conic-gradient(from 0deg, transparent 0deg, rgba(10,188,249,0.4) 30deg, rgba(10,188,249,0.6) 35deg, rgba(10,188,249,0.4) 40deg, transparent 50deg)',
+                    "conic-gradient(from 0deg, transparent 0deg, rgba(10,188,249,0.5) 30deg, rgba(10,188,249,0.7) 35deg, rgba(10,188,249,0.5) 40deg, transparent 50deg)",
                 }}
                 animate={{ rotate: 360 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-              />
-
-              {/* Radar blips (targets) */}
-              {[
-                { angle: 45, distance: 30, delay: 0 },
-                { angle: 120, distance: 50, delay: 0.5 },
-                { angle: 200, distance: 40, delay: 1 },
-                { angle: 280, distance: 60, delay: 1.5 },
-              ].map((blip, idx) => {
-                const x = 50 + Math.cos((blip.angle * Math.PI) / 180) * blip.distance;
-                const y = 50 + Math.sin((blip.angle * Math.PI) / 180) * blip.distance;
-                return (
-                  <motion.div
-                    key={idx}
-                    className="absolute w-3 h-3 rounded-full bg-cyan-400"
-                    style={{
-                      left: `${x}%`,
-                      top: `${y}%`,
-                      transform: 'translate(-50%, -50%)',
-                      boxShadow: '0 0 8px rgba(10,188,249,0.8), 0 0 16px rgba(10,188,249,0.4)',
-                    }}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{
-                      opacity: [0, 1, 1, 0],
-                      scale: [0, 1.2, 1, 0],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      delay: blip.delay,
-                      ease: "easeInOut",
-                    }}
-                  />
-                );
-              })}
-
-              {/* Range markers (top, right, bottom, left) */}
-              <div className="absolute top-2 left-1/2 -translate-x-1/2 text-cyan-400/40 text-xs font-mono">N</div>
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 text-cyan-400/40 text-xs font-mono">E</div>
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-cyan-400/40 text-xs font-mono">S</div>
-              <div className="absolute left-2 top-1/2 -translate-y-1/2 text-cyan-400/40 text-xs font-mono">W</div>
-
-              {/* Soft grid overlay */}
-              <motion.div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(90deg, rgba(10,188,249,0.08) 1px, transparent 1px), linear-gradient(rgba(10,188,249,0.08) 1px, transparent 1px)",
-                  backgroundSize: "40px 40px",
-                }}
-                animate={{
-                  backgroundPosition: ["0px 0px", "40px 40px", "80px 0px", "0px 0px"],
-                }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               />
             </div>
           </AnimatedSection>

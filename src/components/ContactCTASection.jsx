@@ -13,7 +13,7 @@ export function ContactCTASection() {
   };
 
   return (
-    <section id="contact" className="section contact py-20 text-white relative overflow-hidden">
+    <section id="contact" className="section contact py-20 dark:text-white text-black relative overflow-hidden">
       {/* Background glow effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-[#0ABCF9] opacity-20 blur-[150px] rounded-full" />
@@ -31,7 +31,7 @@ export function ContactCTASection() {
               Let's talk
             </motion.h3>
             <motion.p
-              className="muted text-gray-300 text-lg leading-relaxed"
+              className="muted dark:text-gray-300 text-gray-700 text-lg leading-relaxed"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.05 }}
@@ -40,7 +40,7 @@ export function ContactCTASection() {
             </motion.p>
 
             <motion.div
-              className="contact-meta space-y-3 text-gray-200"
+              className="contact-meta space-y-3 dark:text-gray-200 text-gray-700"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
@@ -63,37 +63,37 @@ export function ContactCTASection() {
           <AnimatedSection delay={0.1}>
             <motion.form
               onSubmit={onSubmit}
-              className="contact-form rounded-2xl border border-white/10 bg-[#0D0F1A] p-8 shadow-xl shadow-cyan-500/10 space-y-4"
+              className="contact-form rounded-2xl border dark:border-white/10 border-black/10 dark:bg-[#0D0F1A] bg-white p-8 shadow-xl dark:shadow-cyan-500/10 shadow-black/10 space-y-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               noValidate
             >
               <label className="flex flex-col text-left gap-2">
-                <span className="text-sm text-gray-300">Name</span>
+                <span className="text-sm dark:text-gray-300 text-gray-700">Name</span>
                 <input
                   type="text"
                   name="name"
                   required
-                  className="rounded-md border border-white/10 bg-black px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="rounded-md border dark:border-white/10 border-black/10 dark:bg-black bg-white px-3 py-2 dark:text-white text-black focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </label>
               <label className="flex flex-col text-left gap-2">
-                <span className="text-sm text-gray-300">Email</span>
+                <span className="text-sm dark:text-gray-300 text-gray-700">Email</span>
                 <input
                   type="email"
                   name="email"
                   required
-                  className="rounded-md border border-white/10 bg-black px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="rounded-md border dark:border-white/10 border-black/10 dark:bg-black bg-white px-3 py-2 dark:text-white text-black focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </label>
               <label className="flex flex-col text-left gap-2">
-                <span className="text-sm text-gray-300">Message</span>
+                <span className="text-sm dark:text-gray-300 text-gray-700">Message</span>
                 <textarea
                   name="message"
                   rows="6"
                   required
-                  className="rounded-md border border-white/10 bg-black px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="rounded-md border dark:border-white/10 border-black/10 dark:bg-black bg-white px-3 py-2 dark:text-white text-black focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 ></textarea>
               </label>
 

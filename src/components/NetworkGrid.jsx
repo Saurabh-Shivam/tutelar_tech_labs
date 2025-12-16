@@ -37,8 +37,11 @@ export function NetworkGrid() {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      <svg className="w-full h-full opacity-30" style={{ willChange: 'contents', transform: 'translateZ(0)' }}>
+    <div
+      className="fixed inset-0 pointer-events-none overflow-hidden z-0"
+      style={{ contain: 'layout paint', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
+    >
+      <svg className="w-full h-full opacity-25" style={{ willChange: 'contents', transform: 'translateZ(0)' }} shapeRendering="geometricPrecision">
         {/* Connections */}
         {connections.map((conn) => (
           <motion.line
@@ -47,13 +50,13 @@ export function NetworkGrid() {
             y1={`${conn.from.y}%`}
             x2={`${conn.to.x}%`}
             y2={`${conn.to.y}%`}
-            stroke="rgba(10, 188, 249, 0.2)"
+            stroke="rgba(10, 188, 249, 0.16)"
             strokeWidth="1"
             style={{ willChange: 'stroke-dasharray, opacity' }}
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 0.3 }}
             transition={{
-              duration: 2,
+              duration: 4.8,
               repeat: Infinity,
               repeatType: 'reverse',
               delay: conn.from.delay,
@@ -69,15 +72,15 @@ export function NetworkGrid() {
             cx={`${node.x}%`}
             cy={`${node.y}%`}
             r="3"
-            fill="rgba(10, 188, 249, 0.4)"
+            fill="rgba(10, 188, 249, 0.35)"
             style={{ willChange: 'transform, opacity' }}
             initial={{ scale: 0, opacity: 0 }}
             animate={{ 
-              scale: [0, 1.2, 1],
+              scale: [0, 1.1, 1],
               opacity: [0, 0.6, 0.4],
             }}
             transition={{
-              duration: 2,
+              duration: 3.6,
               repeat: Infinity,
               delay: node.delay,
               ease: 'easeInOut',
@@ -98,7 +101,7 @@ export function NetworkGrid() {
             initial={{ x: `${packet.startX}%`, y: `${packet.startY}%` }}
             animate={{ x: `${packet.endX}%`, y: `${packet.endY}%` }}
             transition={{
-              duration: packet.duration,
+              duration: packet.duration + 2,
               repeat: Infinity,
               repeatType: 'reverse',
               delay: packet.delay,

@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 export function PageNavbar() {
   return (
     <motion.header
-      className="fixed top-0 left-0 w-full z-40 bg-black/80 backdrop-blur-xl border-b border-white/10"
+      className="fixed top-0 left-0 w-full z-40 dark:bg-black/80 bg-white/80 backdrop-blur-xl border-b dark:border-white/10 border-black/10"
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}

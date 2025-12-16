@@ -47,7 +47,7 @@ export function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="section py-20 text-white">
+    <section className="section py-20 dark:text-white text-black">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
@@ -58,7 +58,7 @@ export function TestimonialsSection() {
         <div className="relative flex flex-col items-center gap-12">
           {/* Testimonial Card */}
           <motion.div
-            className="max-w-3xl bg-black border border-white/10 p-10 rounded-2xl shadow-xl shadow-cyan-500/5 text-center"
+            className="max-w-3xl dark:bg-black bg-white border dark:border-white/10 border-black/10 p-10 rounded-2xl shadow-xl dark:shadow-cyan-500/5 shadow-black/10 text-center"
             key={currentIndex}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,14 +74,14 @@ export function TestimonialsSection() {
               ))}
             </div>
 
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
+            <p className="dark:text-gray-300 text-gray-700 text-lg leading-relaxed mb-6">
               {testimonials[currentIndex].content}
             </p>
 
             <h4 className="text-xl font-semibold">
               {testimonials[currentIndex].name}
             </h4>
-            <p className="text-gray-500">{testimonials[currentIndex].role}</p>
+            <p className="dark:text-gray-500 text-gray-600">{testimonials[currentIndex].role}</p>
           </motion.div>
 
           {/* Indicators */}

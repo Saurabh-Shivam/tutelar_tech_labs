@@ -47,52 +47,49 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="section relative min-h-[110vh] flex items-center justify-center overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(8,10,20,0.85) 0%, rgba(6,8,14,0.88) 100%)",
-      }}
+      className="section relative min-h-[110vh] flex items-center justify-center overflow-hidden bg-[linear-gradient(180deg,rgba(255,255,255,0.95)_0%,rgba(245,245,245,0.96)_100%)] dark:bg-[linear-gradient(180deg,rgba(8,10,20,0.85)_0%,rgba(6,8,14,0.88)_100%)]"
     >
       {/* Background gradients */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#0ABCF9] opacity-20 blur-[120px] rounded-full" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#6A4DFB] opacity-20 blur-[120px] rounded-full" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#00FFB4] opacity-10 blur-[100px] rounded-full" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#0ABCF9] opacity-20 blur-[72px] rounded-full" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#6A4DFB] opacity-20 blur-[72px] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#00FFB4] opacity-10 blur-[64px] rounded-full" />
       </div>
 
       {/* Local hero grid to ensure visibility on first section */}
       <motion.div
-        className="pointer-events-none absolute inset-0 opacity-25 mix-blend-screen"
+        className="pointer-events-none absolute inset-0 mix-blend-screen dark:opacity-25 opacity-15"
         style={{
           backgroundImage:
             "radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px)",
           backgroundSize: "120px 120px, 56px 56px, 56px 56px",
           willChange: 'background-position',
           transform: 'translateZ(0)',
+          contain: 'layout paint',
         }}
         animate={{
           backgroundPosition: [
             "0px 0px,0px 0px,0px 0px",
-            "36px 52px,24px 24px,48px 48px",
+            "32px 48px,22px 22px,44px 44px",
           ],
         }}
-        transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
       />
 
       {/* Scanning aurora */}
       <motion.div
-        className="pointer-events-none absolute inset-x-0 top-1/3 h-44 bg-gradient-to-r from-transparent via-white/18 to-transparent blur-3xl mix-blend-screen"
-        style={{ willChange: 'transform', transform: 'translateZ(0)' }}
+        className="pointer-events-none absolute inset-x-0 top-1/3 h-44 bg-gradient-to-r from-transparent via-white/18 to-transparent blur-xl mix-blend-screen"
+        style={{ willChange: 'transform', transform: 'translateZ(0)', contain: 'layout paint' }}
         animate={{ x: ["-20%", "120%"] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* Floating cyber nodes */}
       <motion.div
         className="pointer-events-none absolute inset-0"
         style={{ willChange: 'opacity', transform: 'translateZ(0)' }}
-        animate={{ opacity: [0.4, 0.8, 0.4] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ opacity: [0.35, 0.7, 0.35] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
         {cyberNodes.map((node) => (
           <motion.span
@@ -103,7 +100,7 @@ export function HeroSection() {
               height: node.size,
               top: `${node.top}%`,
               left: `${node.left}%`,
-              boxShadow: "0 0 14px #0ABCF9, 0 0 24px rgba(255,255,255,0.4)",
+              boxShadow: "0 0 8px #0ABCF9, 0 0 12px rgba(255,255,255,0.32)",
               willChange: 'transform, opacity',
               transform: 'translateZ(0)',
             }}
@@ -112,7 +109,7 @@ export function HeroSection() {
               opacity: [0.5, 1, 0.5],
             }}
             transition={{
-              duration: node.duration,
+              duration: node.duration + 2,
               repeat: Infinity,
               ease: "easeInOut",
               delay: node.delay,
@@ -151,7 +148,7 @@ export function HeroSection() {
             ))}
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-300 mb-10">
+          <p className="text-lg md:text-xl text-gray-500 mb-10">
             Protecting your digital infrastructure with AI-powered security,
             expert monitoring, and enterprise-level solutions.
           </p>

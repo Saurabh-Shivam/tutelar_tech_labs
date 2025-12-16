@@ -12,9 +12,9 @@ export function CareerPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
   return (
-    <div className="relative min-h-screen text-white overflow-hidden">
+    <div className="relative min-h-screen dark:text-white text-black overflow-hidden">
       <PageBackground />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-slate-950/14 to-black/45" />
+      <div className="pointer-events-none absolute inset-0 dark:bg-gradient-to-b dark:from-black/30 dark:via-slate-950/14 dark:to-black/45 bg-gradient-to-b from-white/40 via-slate-200/20 to-white/50" />
       <Navbar />
 
       <ScrollToTop />
@@ -46,7 +46,7 @@ export function CareerPage() {
             Build the future of cybersecurity with us
           </motion.h1>
           <motion.p
-            className="text-lg text-gray-200 leading-relaxed max-w-3xl"
+            className="text-lg dark:text-gray-200 text-gray-700 leading-relaxed max-w-3xl"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
@@ -80,17 +80,17 @@ export function CareerPage() {
           ].map((role) => (
             <motion.div
               key={role.title}
-              className="p-6 rounded-2xl border border-white/10 bg-white/5 shadow-lg shadow-cyan-500/10"
+              className="p-6 rounded-2xl border dark:border-white/10 border-black/10 dark:bg-white/5 bg-black/5 shadow-lg dark:shadow-cyan-500/10 shadow-black/10"
               whileHover={{ scale: 1.03 }}
             >
               <h3 className="text-xl font-semibold mb-2">{role.title}</h3>
-              <p className="text-gray-200">{role.text}</p>
+              <p className="dark:text-gray-200 text-gray-700">{role.text}</p>
             </motion.div>
           ))}
         </motion.div>
 
         <motion.div
-          className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-lg shadow-cyan-500/10"
+          className="dark:bg-white/5 bg-black/5 border dark:border-white/10 border-black/10 rounded-2xl p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-lg dark:shadow-cyan-500/10 shadow-black/10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
@@ -99,7 +99,7 @@ export function CareerPage() {
             <h3 className="text-2xl font-semibold mb-2">
               We’d love to meet you
             </h3>
-            <p className="text-gray-200">
+            <p className="dark:text-gray-200 text-gray-700">
               Share your profile or ask about open roles. We’ll reach out soon.
             </p>
           </div>

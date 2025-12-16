@@ -24,25 +24,28 @@ export function PageBackground() {
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-gradient-to-b from-[#052133] via-[#082f42] to-[#02060a]">
+    <div
+      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-gradient-to-b from-[#052133] via-[#082f42] to-[#02060a]"
+      style={{ contain: "layout paint", backfaceVisibility: "hidden", transform: "translateZ(0)" }}
+    >
       {/* Soft glow blobs */}
       <motion.div
-        className="absolute w-80 h-80 bg-cyan-300/55 blur-[100px] left-10 top-16 rounded-full"
+        className="absolute w-80 h-80 bg-cyan-300/55 blur-[80px] left-10 top-16 rounded-full"
         style={{ willChange: "transform", transform: "translateZ(0)" }}
         animate={{ x: [0, 36, -26, 0], y: [0, -26, 14, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute w-96 h-96 bg-blue-300/50 blur-[115px] right-[-40px] top-32 rounded-full"
+        className="absolute w-96 h-96 bg-blue-300/50 blur-[92px] right-[-40px] top-32 rounded-full"
         style={{ willChange: "transform", transform: "translateZ(0)" }}
         animate={{ x: [0, -30, 16, 0], y: [0, 32, -18, 0] }}
-        transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute w-72 h-72 bg-emerald-300/46 blur-[100px] left-1/2 bottom-0 rounded-full"
+          className="absolute w-72 h-72 bg-emerald-300/40 blur-[68px] left-1/2 bottom-0 rounded-full"
         style={{ willChange: "transform", transform: "translateZ(0)" }}
         animate={{ x: [0, 22, -28, 0], y: [0, -38, 24, 0] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* Floating dots */}
@@ -53,12 +56,12 @@ export function PageBackground() {
           style={{
             top: `${dot.top}px`,
             left: `${dot.left}px`,
-            boxShadow: "0 0 18px rgba(67,217,255,0.95)",
+            boxShadow: "0 0 8px rgba(67,217,255,0.55)",
             willChange: "transform, opacity",
             transform: "translateZ(0)",
           }}
           animate={{
-            opacity: [0.25, 1, 0.35],
+            opacity: [0.25, 0.9, 0.35],
             scale: [0.95, 1.5, 1],
             y: [0, -10, 0],
           }}
@@ -75,7 +78,7 @@ export function PageBackground() {
       {comets.map((comet) => (
         <motion.div
           key={`comet-${comet.id}`}
-          className="absolute h-[3px] w-48 bg-gradient-to-r from-transparent via-cyan-200 to-white/95 rounded-full blur-[2px]"
+          className="absolute h-[3px] w-48 bg-gradient-to-r from-transparent via-cyan-200 to-white/90 rounded-full blur-[1px]"
           style={{
             top: `${comet.top}px`,
             left: `${comet.left}px`,
@@ -85,14 +88,14 @@ export function PageBackground() {
           }}
           animate={{
             x: [0, 1440],
-            opacity: [0, 1, 0.35, 0],
-            scaleX: [0.8, 1.3, 0.9],
+            opacity: [0, 1, 0],
+            scaleX: [0.9, 1.15, 1.0],
           }}
           transition={{
-            duration: comet.duration,
+            duration: comet.duration + 5,
             repeat: Infinity,
             delay: comet.delay,
-            ease: "easeOut",
+            ease: "linear",
           }}
         />
       ))}
@@ -110,7 +113,7 @@ export function PageBackground() {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         >
           <motion.div
-            className="absolute w-80 h-80 rounded-full border border-cyan-300/40 shadow-[0_0_40px_rgba(34,211,238,0.25)]"
+            className="absolute w-80 h-80 rounded-full border border-cyan-300/40 shadow-[0_0_28px_rgba(34,211,238,0.22)]"
             style={{ willChange: "transform", transform: "translateZ(0)" }}
             animate={{ rotate: 360 }}
             transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
@@ -122,7 +125,7 @@ export function PageBackground() {
             transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
           />
           <motion.div
-            className="absolute w-96 h-96 rounded-full bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.12),transparent_65%)] blur-[120px]"
+            className="absolute w-96 h-96 rounded-full bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.12),transparent_65%)] blur-[90px]"
             style={{
               willChange: "transform, opacity",
               transform: "translateZ(0)",
@@ -136,7 +139,7 @@ export function PageBackground() {
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 64 64"
-            className="w-24 h-24 text-cyan-200 drop-shadow-[0_0_16px_rgba(34,211,238,0.55)]"
+            className="w-24 h-24 text-cyan-200 drop-shadow-[0_0_12px_rgba(34,211,238,0.45)]"
             style={{ willChange: "transform", transform: "translateZ(0)" }}
             initial={{ scale: 0.92 }}
             animate={{ scale: [0.92, 1.04, 0.98], rotate: [0, 3, -3, 0] }}
@@ -157,13 +160,13 @@ export function PageBackground() {
 
       {/* Nebula haze layers */}
       <motion.div
-        className="absolute w-[900px] h-[900px] bg-[radial-gradient(circle_at_center,rgba(67,217,255,0.14),transparent_65%)] blur-[160px] left-[-200px] top-[120px]"
+        className="absolute w-[900px] h-[900px] bg-[radial-gradient(circle_at_center,rgba(67,217,255,0.14),transparent_65%)] blur-[120px] left-[-200px] top-[120px]"
         style={{ willChange: "transform, opacity", transform: "translateZ(0)" }}
         animate={{ scale: [1, 1.08, 0.96, 1], opacity: [0.4, 0.65, 0.45, 0.6] }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute w-[780px] h-[780px] bg-[radial-gradient(circle_at_center,rgba(120,255,214,0.12),transparent_65%)] blur-[150px] right-[-140px] top-[200px]"
+        className="absolute w-[780px] h-[780px] bg-[radial-gradient(circle_at_center,rgba(120,255,214,0.12),transparent_65%)] blur-[110px] right-[-140px] top-[200px]"
         style={{ willChange: "transform, opacity", transform: "translateZ(0)" }}
         animate={{
           scale: [1.02, 0.94, 1.06, 1],
@@ -172,7 +175,7 @@ export function PageBackground() {
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute w-[640px] h-[640px] bg-[radial-gradient(circle_at_center,rgba(46,170,255,0.15),transparent_70%)] blur-[140px] left-[30%] bottom-[-120px]"
+        className="absolute w-[640px] h-[640px] bg-[radial-gradient(circle_at_center,rgba(46,170,255,0.15),transparent_70%)] blur-[100px] left-[30%] bottom-[-120px]"
         style={{ willChange: "transform, opacity", transform: "translateZ(0)" }}
         animate={{
           scale: [0.96, 1.07, 0.98, 1],

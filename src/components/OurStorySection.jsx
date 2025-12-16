@@ -24,13 +24,13 @@ export function OurStorySection() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   return (
-    <section id="our-story" className="section py-20 text-white">
+    <section id="our-story" className="section py-20 dark:text-white text-black">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
             Our Story
           </h2>
-          <p className="text-center text-gray-400 max-w-3xl mx-auto mb-12">
+          <p className="text-center dark:text-gray-400 text-gray-700 max-w-3xl mx-auto mb-12">
             Discover our journey, mission, and vision that drive our commitment to cybersecurity.
           </p>
         </AnimatedSection>
@@ -48,7 +48,7 @@ export function OurStorySection() {
                       px-6 py-3 rounded-lg font-semibold transition-all border
                       ${activeTab === tab.id 
                         ? 'bg-cyan-500 text-black border-cyan-500' 
-                        : 'border-gray-700 text-gray-300 hover:border-cyan-400 hover:text-cyan-400'
+                        : 'dark:border-gray-700 border-black/20 dark:text-gray-300 text-gray-700 hover:border-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-400'
                       }
                     `}
                     whileHover={{ scale: 1.05 }}
@@ -72,7 +72,7 @@ export function OurStorySection() {
                     transition={{ duration: 0.4 }}
                     className={activeTab === tab.id ? 'block' : 'hidden'}
                   >
-                    <div className="bg-[#0D0F1A] p-8 rounded-xl border border-white/10 shadow-xl">
+                    <div className="dark:bg-[#0D0F1A] bg-white p-8 rounded-xl border dark:border-white/10 border-black/10 shadow-xl">
                       <motion.p
                         key={activeTab}
                         initial={{ scale: 0.3, opacity: 0 }}
@@ -81,7 +81,7 @@ export function OurStorySection() {
                           duration: 0.6,
                           ease: [0.25, 0.1, 0.25, 1],
                         }}
-                        className="text-gray-300 leading-relaxed text-lg"
+                        className="dark:text-gray-300 text-gray-700 leading-relaxed text-lg"
                       >
                         {tab.content}
                       </motion.p>
@@ -96,4 +96,3 @@ export function OurStorySection() {
     </section>
   );
 }
-

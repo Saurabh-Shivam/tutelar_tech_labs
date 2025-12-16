@@ -7,12 +7,12 @@ export function MapSection() {
   const mapSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
 
   return (
-    <section id="map" className="section map-section py-20 bg-gradient-to-b from-[#0D0F1A] to-[#1A0B2E] overflow-hidden">
+    <section id="map" className="section map-section py-20 dark:bg-gradient-to-b dark:from-[#0D0F1A] dark:to-[#1A0B2E] bg-gradient-to-b from-white to-slate-100 overflow-hidden">
       <div className="container max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           {/* Left column: map (reduced size, left aligned) */}
           <AnimatedSection>
-            <div className="map-wrap relative w-full rounded-xl overflow-hidden border border-white/10 shadow-xl shadow-cyan-500/5" id="mapWrap">
+            <div className="map-wrap relative w-full rounded-xl overflow-hidden border dark:border-white/10 border-black/10 shadow-xl dark:shadow-cyan-500/5 shadow-black/10" id="mapWrap">
               <iframe
                 className="map-iframe w-full h-[360px] md:h-[420px]"
                 id="mapIframe"
@@ -32,7 +32,7 @@ export function MapSection() {
               <h2 className="text-4xl md:text-5xl mb-4 bg-gradient-to-r from-white to-[#0ABCF9] bg-clip-text text-transparent">
                 Find us
               </h2>
-              <p className="section-sub text-gray-300 text-lg leading-relaxed">
+              <p className="section-sub dark:text-gray-300 text-gray-700 text-lg leading-relaxed">
                 {address}
               </p>
             </div>

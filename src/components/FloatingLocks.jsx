@@ -16,7 +16,10 @@ export function FloatingLocks() {
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 -z-10">
+    <div
+      className="pointer-events-none fixed inset-0 -z-10"
+      style={{ contain: 'layout paint', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
+    >
       {locks.map((lock) => (
         <motion.div
           key={lock.id}
@@ -38,10 +41,9 @@ export function FloatingLocks() {
             delay: lock.delay,
           }}
         >
-          <Lock className="w-full h-full drop-shadow-[0_0_35px_rgba(0,188,249,0.35)]" />
+          <Lock className="w-full h-full drop-shadow-[0_0_18px_rgba(0,188,249,0.26)]" />
         </motion.div>
       ))}
     </div>
   );
 }
-

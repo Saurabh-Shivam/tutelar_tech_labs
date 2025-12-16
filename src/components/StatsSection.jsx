@@ -61,7 +61,7 @@ function StatCard({ label, target, suffix, delay = 0 }) {
   return (
     <motion.div
       ref={ref}
-      className="p-8 bg-[#0D0F1A] rounded-xl border border-white/10 shadow-xl shadow-cyan-500/5 hover-lift"
+      className="p-8 dark:bg-[#0D0F1A] bg-white rounded-xl border dark:border-white/10 border-black/10 shadow-xl dark:shadow-cyan-500/5 shadow-black/10 hover-lift"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, delay }}
@@ -77,14 +77,14 @@ function StatCard({ label, target, suffix, delay = 0 }) {
         {formatted}
         {suffix}
       </motion.h3>
-      <p className="text-gray-400">{label}</p>
+      <p className="dark:text-gray-400 text-gray-700">{label}</p>
     </motion.div>
   );
 }
 
 export function StatsSection() {
   return (
-    <section className="section py-20 text-white">
+    <section className="section py-20 dark:text-white text-black">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">

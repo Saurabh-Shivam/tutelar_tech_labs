@@ -15,7 +15,10 @@ export function GlobalGrid() {
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-0 opacity-35">
+    <div
+      className="pointer-events-none fixed inset-0 z-0 dark:opacity-35 opacity-20"
+      style={{ contain: 'layout paint', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
+    >
       {/* Grid lines + tiny dots */}
       <motion.div
         className="absolute inset-0 mix-blend-screen"
@@ -27,17 +30,17 @@ export function GlobalGrid() {
           transform: 'translateZ(0)',
         }}
         animate={{
-          backgroundPosition: ['0px 0px,0px 0px,0px 0px', '40px 60px,28px 28px,56px 56px'],
+          backgroundPosition: ['0px 0px,0px 0px,0px 0px', '32px 48px,22px 22px,44px 44px'],
         }}
-        transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+        transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
       />
 
       {/* Floating cyan dots across all sections */}
       <motion.div
         className="absolute inset-0"
         style={{ willChange: 'opacity', transform: 'translateZ(0)' }}
-        animate={{ opacity: [0.4, 0.8, 0.4] }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        animate={{ opacity: [0.35, 0.7, 0.35] }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
       >
         {dots.map((dot) => (
           <motion.span
@@ -48,7 +51,7 @@ export function GlobalGrid() {
               height: dot.size,
               top: `${dot.top}%`,
               left: `${dot.left}%`,
-              boxShadow: '0 0 14px #0ABCF9, 0 0 20px rgba(0,188,249,0.45)',
+              boxShadow: '0 0 8px #0ABCF9, 0 0 12px rgba(0,188,249,0.32)',
               willChange: 'transform, opacity',
               transform: 'translateZ(0)',
             }}
@@ -57,7 +60,7 @@ export function GlobalGrid() {
               opacity: [0.5, 1, 0.5],
             }}
             transition={{
-              duration: dot.duration,
+              duration: dot.duration + 2,
               repeat: Infinity,
               ease: 'easeInOut',
               delay: dot.delay,
@@ -68,4 +71,3 @@ export function GlobalGrid() {
     </div>
   );
 }
-

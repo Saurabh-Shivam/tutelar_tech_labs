@@ -26,6 +26,24 @@ import { IAMProductPage } from "./pages/IAMProduct.jsx";
 import { CareerPage } from "./pages/Career.jsx";
 import "./index.css";
 
+const storedTheme = (() => {
+  try {
+    return localStorage.getItem("theme");
+  } catch {
+    return null;
+  }
+})();
+const initialTheme =
+  storedTheme === "light" || storedTheme === "dark" ? storedTheme : "dark";
+const rootEl = document.documentElement;
+rootEl.classList.remove("dark");
+if (initialTheme === "dark") {
+  rootEl.classList.add("dark");
+}
+try {
+  localStorage.setItem("theme", initialTheme);
+} catch {}
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
