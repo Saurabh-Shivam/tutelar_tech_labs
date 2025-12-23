@@ -1,28 +1,54 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Search, BarChart3, Shield, Eye } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 
 const steps = [
   {
-    icon: <Search className="w-10 h-10 text-cyan-400" />,
-    title: 'Discovery',
-    description: 'Comprehensive assessment of your digital infrastructure and security vulnerabilities',
-  },
-  {
-    icon: <BarChart3 className="w-10 h-10 text-cyan-400" />,
-    title: 'Analysis',
-    description: 'Deep dive into threat patterns, risk factors, and security gaps',
-  },
-  {
-    icon: <Shield className="w-10 h-10 text-cyan-400" />,
-    title: 'Protection',
-    description: 'Deploying robust security solutions to safeguard your digital ecosystem',
-  },
-  {
-    icon: <Eye className="w-10 h-10 text-cyan-400" />,
-    title: 'Monitoring',
-    description: 'Continuous monitoring and proactive threat detection for total peace of mind',
-  },
+  icon: <Search className="w-10 h-10 text-cyan-400" />,
+  title: 'Design',
+  description: (
+    <>
+      Brainstorm in partnership with OEMs and clients on business needs.
+      <br />
+      POC for the solutions to be implemented.
+    </>
+  ),
+},
+
+ {
+  icon: <BarChart3 className="w-10 h-10 text-cyan-400" />,
+  title: 'Deploy',
+  description: (
+    <>
+      Project management with end to end ownership.
+      <br />
+      Implement the agreed solutions with project stakeholders.
+    </>
+  ),
+},
+{
+  icon: <Shield className="w-10 h-10 text-cyan-400" />,
+  title: 'Manage',
+  description: (
+    <>
+      Manage customer infrastructure and ensure ongoing protection of sensitive data.
+      <br />
+      Perform BCP activities for DC and DR sites.
+    </>
+  ),
+},
+{
+  icon: <Eye className="w-10 h-10 text-cyan-400" />,
+  title: 'Monitoring',
+  description: (
+    <>
+      Continuous monitoring and proactive threat detection.
+      <br />
+      Monitor vulnerabilities and ensure compliance with industry standards.
+    </>
+  ),
+},
+
 ];
 
 export function ProcessSection() {
@@ -50,6 +76,7 @@ export function ProcessSection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
+                  style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
                 >
                   {/* Connector Dot */}
                   <div
@@ -71,11 +98,13 @@ export function ProcessSection() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.4 }}
+                      style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
                     >
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.6 }}
+                        style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

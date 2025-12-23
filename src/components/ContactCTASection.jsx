@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { AnimatedSection } from './AnimatedSection';
 import { Mail, Phone, MapPin } from 'lucide-react';
@@ -25,6 +25,7 @@ export function ContactCTASection() {
           <AnimatedSection className="contact-info space-y-4">
             <motion.h3
               className="text-4xl font-bold"
+              style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
             >
@@ -32,6 +33,7 @@ export function ContactCTASection() {
             </motion.h3>
             <motion.p
               className="muted dark:text-gray-300 text-gray-700 text-lg leading-relaxed"
+              style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.05 }}
@@ -41,6 +43,7 @@ export function ContactCTASection() {
 
             <motion.div
               className="contact-meta space-y-3 dark:text-gray-200 text-gray-700"
+              style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
@@ -64,6 +67,7 @@ export function ContactCTASection() {
             <motion.form
               onSubmit={onSubmit}
               className="contact-form rounded-2xl border dark:border-white/10 border-black/10 dark:bg-[#0D0F1A] bg-white p-8 shadow-xl dark:shadow-cyan-500/10 shadow-black/10 space-y-4"
+              style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -103,6 +107,7 @@ export function ContactCTASection() {
                   className="btn primary px-5 py-2 rounded-md bg-gradient-to-r from-[#0ABCF9] to-[#6A4DFB] text-white font-semibold shadow-lg shadow-cyan-500/30 hover:scale-105 transition-transform"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  style={{ willChange: 'transform', transform: 'translateZ(0)' }}
                 >
                   Send message
                 </motion.button>

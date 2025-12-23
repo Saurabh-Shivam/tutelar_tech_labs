@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Navbar } from "../components/Navbar";
 import { PageBackground } from "../components/PageBackground";
 import { Footer } from "../components/Footer";
@@ -58,6 +58,7 @@ export function SecurityPage({ pageKey }) {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
+        style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
       >
         <motion.div className="text-center space-y-4">
           <motion.p
@@ -65,6 +66,7 @@ export function SecurityPage({ pageKey }) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
           >
             {data.subtitle}
           </motion.p>
@@ -77,6 +79,7 @@ export function SecurityPage({ pageKey }) {
               filter: ["blur(6px)", "blur(2px)", "blur(0px)"],
             }}
             transition={{ duration: 0.9, ease: "easeOut" }}
+            style={{ willChange: 'transform, filter', transform: 'translateZ(0)' }}
           >
             {data.title}
           </motion.h1>
@@ -87,6 +90,7 @@ export function SecurityPage({ pageKey }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+          style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
         >
           <div className="space-y-4 text-lg dark:text-gray-200 text-gray-700 leading-relaxed">
             {data.details.map((paragraph, idx) => (
@@ -101,6 +105,7 @@ export function SecurityPage({ pageKey }) {
             variants={gridVariants}
             initial="initial"
             animate="animate"
+            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
           >
             {data.images.map((image, idx) => (
               <motion.div
@@ -116,7 +121,7 @@ export function SecurityPage({ pageKey }) {
                 }}
                 whileTap={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 220, damping: 20 }}
-                style={{ transformOrigin: "50% 50%" }}
+                style={{ transformOrigin: "50% 50%", willChange: 'transform, opacity, filter', transform: 'translateZ(0)' }}
               >
               <motion.img
                 src={image.src}
@@ -126,6 +131,7 @@ export function SecurityPage({ pageKey }) {
                 initial={{ scale: 1.02 }}
                 animate={{ scale: [1.02, 0.98, 1] }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
+                style={{ willChange: 'transform', transform: 'translateZ(0)' }}
               />
               </motion.div>
             ))}
@@ -147,6 +153,7 @@ export function SecurityPage({ pageKey }) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.4 }}
+        style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
       >
         <Footer />
       </motion.div>

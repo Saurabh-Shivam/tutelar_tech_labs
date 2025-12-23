@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 export function GlowingButton({ 
   children, 
@@ -19,6 +19,7 @@ export function GlowingButton({
       `}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
+      style={{ willChange: 'transform', transform: 'translateZ(0)' }}
     >
       {children}
 
@@ -26,6 +27,7 @@ export function GlowingButton({
       <motion.span
         className="absolute inset-0 rounded-full blur-xl -z-10"
         style={{
+          willChange: 'opacity', transform: 'translateZ(0)',
           background: isPrimary 
             ? '#0ABCF9' 
             : '#0ABCF9',

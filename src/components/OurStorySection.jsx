@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { AnimatedSection } from './AnimatedSection';
 
@@ -53,6 +53,7 @@ export function OurStorySection() {
                     `}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    style={{ willChange: 'transform', transform: 'translateZ(0)' }}
                   >
                     {tab.label}
                   </motion.button>
@@ -71,6 +72,7 @@ export function OurStorySection() {
                     }}
                     transition={{ duration: 0.4 }}
                     className={activeTab === tab.id ? 'block' : 'hidden'}
+                    style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
                   >
                     <div className="dark:bg-[#0D0F1A] bg-white p-8 rounded-xl border dark:border-white/10 border-black/10 shadow-xl">
                       <motion.p
@@ -82,6 +84,7 @@ export function OurStorySection() {
                           ease: [0.25, 0.1, 0.25, 1],
                         }}
                         className="dark:text-gray-300 text-gray-700 leading-relaxed text-lg"
+                        style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
                       >
                         {tab.content}
                       </motion.p>

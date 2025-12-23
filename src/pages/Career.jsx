@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { PageBackground } from "../components/PageBackground";
@@ -25,12 +25,14 @@ export function CareerPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="space-y-6"
+          style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
         >
           <motion.p
             className="text-cyan-300 uppercase tracking-[0.3em] text-xs md:text-sm"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
           >
             Careers at Tutelar
           </motion.p>
@@ -42,6 +44,7 @@ export function CareerPage() {
               filter: ["blur(6px)", "blur(2px)", "blur(0px)"],
             }}
             transition={{ duration: 0.9, ease: "easeOut" }}
+            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
           >
             Build the future of cybersecurity with us
           </motion.h1>
@@ -50,6 +53,7 @@ export function CareerPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
           >
             Join a team that blends deep domain expertise with relentless
             innovation. We’re always looking for engineers, analysts, and
@@ -63,6 +67,7 @@ export function CareerPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
         >
           {[
             {
@@ -77,11 +82,24 @@ export function CareerPage() {
               title: "DevSecOps",
               text: "Embed security into CI/CD, automation, and runtime protection.",
             },
+            {
+              title: "Product Design",
+              text: "Create intuitive, powerful interfaces for complex security tools.",
+            },
+            {
+              title: "Sales & Marketing",
+              text: "Bring our mission to the world and grow our global footprint.",
+            },
+            {
+              title: "Customer Success",
+              text: "Ensure our partners maximize value and stay secure 24/7.",
+            },
           ].map((role) => (
             <motion.div
               key={role.title}
               className="p-6 rounded-2xl border dark:border-white/10 border-black/10 dark:bg-white/5 bg-black/5 shadow-lg dark:shadow-cyan-500/10 shadow-black/10"
               whileHover={{ scale: 1.03 }}
+              style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
             >
               <h3 className="text-xl font-semibold mb-2">{role.title}</h3>
               <p className="dark:text-gray-200 text-gray-700">{role.text}</p>
@@ -94,6 +112,7 @@ export function CareerPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
+          style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
         >
           <div>
             <h3 className="text-2xl font-semibold mb-2">
@@ -108,6 +127,7 @@ export function CareerPage() {
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
           >
             Get in touch
           </motion.a>
@@ -128,6 +148,7 @@ export function CareerPage() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.4 }}
+        style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
       >
         <Footer />
       </motion.div>

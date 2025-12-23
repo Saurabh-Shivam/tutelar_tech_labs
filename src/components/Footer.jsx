@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Twitter, Linkedin, Github, Mail } from 'lucide-react';
 
 export function Footer() {
@@ -40,6 +40,7 @@ export function Footer() {
                   key={index}
                   href={social.href}
                   className="p-3 dark:bg-[#0D0F1A] bg-black/5 border dark:border-white/10 border-black/10 rounded-lg hover:border-cyan-500/40 hover:dark:bg-cyan-500/10 hover:bg-black/10 transition-all"
+                  style={{ willChange: 'transform', transform: 'translateZ(0)' }}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label={social.label}
@@ -105,6 +106,7 @@ export function Footer() {
                 href="#"
                 className="dark:text-gray-400 text-gray-700 hover:text-cyan-600 dark:hover:text-cyan-400 text-sm transition-colors"
                 whileHover={{ scale: 1.05 }}
+                style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               >
                 {link}
               </motion.a>

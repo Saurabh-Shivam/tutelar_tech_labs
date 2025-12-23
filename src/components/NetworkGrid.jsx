@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useMemo } from 'react';
 
 export function NetworkGrid() {
@@ -52,7 +52,7 @@ export function NetworkGrid() {
             y2={`${conn.to.y}%`}
             stroke="rgba(10, 188, 249, 0.16)"
             strokeWidth="1"
-            style={{ willChange: 'stroke-dasharray, opacity' }}
+            style={{ willChange: 'stroke-dasharray, opacity, transform', transform: 'translateZ(0)' }}
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 0.3 }}
             transition={{
@@ -73,7 +73,7 @@ export function NetworkGrid() {
             cy={`${node.y}%`}
             r="3"
             fill="rgba(10, 188, 249, 0.35)"
-            style={{ willChange: 'transform, opacity' }}
+            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
             initial={{ scale: 0, opacity: 0 }}
             animate={{ 
               scale: [0, 1.1, 1],
@@ -97,7 +97,7 @@ export function NetworkGrid() {
             width="20"
             height="2"
             fill={packet.id % 3 === 0 ? 'rgba(10, 188, 249, 0.5)' : 'rgba(255, 0, 0, 0.3)'}
-            style={{ willChange: 'transform' }}
+            style={{ willChange: 'transform', transform: 'translateZ(0)' }}
             initial={{ x: `${packet.startX}%`, y: `${packet.startY}%` }}
             animate={{ x: `${packet.endX}%`, y: `${packet.endY}%` }}
             transition={{

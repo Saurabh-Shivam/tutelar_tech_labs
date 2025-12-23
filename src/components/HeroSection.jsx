@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from 'framer-motion';
 import { FloatingParticles } from "./FloatingParticles";
 import { GlowingButton } from "./GlowingButton";
 import { Shield, Lock, Zap } from "lucide-react";
@@ -122,6 +122,7 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-16 md:pt-24">
         <motion.div
+          style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
           initial={{
             opacity: 0,
             x: randomOffset.x,
@@ -135,6 +136,7 @@ export function HeroSection() {
             {headingWords.map(({ word, offset, delay }) => (
               <motion.span
                 key={word + delay}
+                style={{ willChange: 'transform, opacity', transform: 'translateZ(0)', display: 'inline-block' }}
                 initial={{ opacity: 0, x: offset.x, y: offset.y, rotate: -2 }}
                 animate={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
                 transition={{
@@ -165,6 +167,7 @@ export function HeroSection() {
         <div className="flex justify-center gap-12 mt-20 mb-24">
           <motion.div
             className="flex flex-col items-center gap-2 relative z-10"
+            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ y: -6, scale: 1.12 }}
@@ -176,6 +179,7 @@ export function HeroSection() {
 
           <motion.div
             className="flex flex-col items-center gap-2 relative z-10"
+            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -188,6 +192,7 @@ export function HeroSection() {
 
           <motion.div
             className="flex flex-col items-center gap-2 relative z-10"
+            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}

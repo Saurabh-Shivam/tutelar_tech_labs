@@ -1,6 +1,6 @@
-import { motion } from "motion/react";
+import { motion } from 'framer-motion';
 import { AnimatedSection } from "./AnimatedSection";
-import { Cpu, Server, Database, CheckCircle2 } from "lucide-react";
+import { Cpu, Server, Database, CheckCircle2, ArrowDown } from "lucide-react";
 
 export function AboutSection() {
   const differentiators = [
@@ -28,9 +28,10 @@ export function AboutSection() {
             </p>
 
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              One Partner.
+              One Partner
+              <ArrowDown className="w-8 h-8 mx-auto my-3 text-cyan-400" />
               <span className="block text-cyan-400 mt-2">
-                End-to-End Cybersecurity.
+                End-to-End Cybersecurity
               </span>
             </h2>
 
@@ -53,6 +54,7 @@ export function AboutSection() {
                   <motion.div
                     key={index}
                     className="flex items-start gap-4 p-4 rounded-xl dark:bg-white/5 bg-black/5 dark:border-white/10 border-black/10 hover:border-cyan-400/40 transition-colors"
+                    style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -85,6 +87,7 @@ export function AboutSection() {
                 <motion.div
                   key={index}
                   className="flex justify-center items-center w-24 h-24 rounded-full dark:bg-black bg-white dark:border-white/10 border-black/10 shadow-xl dark:shadow-cyan-500/10 shadow-black/10"
+                  style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
                   initial={{ opacity: 0, scale: 0.85 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -121,6 +124,7 @@ export function AboutSection() {
                 className="absolute inset-0 flex items-center justify-center"
                 animate={{ opacity: [0.6, 1, 0.6] }}
                 transition={{ duration: 2, repeat: Infinity }}
+                style={{ willChange: 'opacity', transform: 'translateZ(0)' }}
               >
                 <div className="w-8 h-8 rounded-full bg-cyan-400/60 blur-sm" />
                 <div className="absolute w-4 h-4 rounded-full bg-cyan-400" />
@@ -132,6 +136,8 @@ export function AboutSection() {
                 style={{
                   background:
                     "conic-gradient(from 0deg, transparent 0deg, rgba(10,188,249,0.5) 30deg, rgba(10,188,249,0.7) 35deg, rgba(10,188,249,0.5) 40deg, transparent 50deg)",
+                  willChange: 'transform',
+                  transform: 'translateZ(0)'
                 }}
                 animate={{ rotate: 360 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}

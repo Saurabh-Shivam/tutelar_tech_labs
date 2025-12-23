@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { AnimatedSection } from "./AnimatedSection";
 import { Star } from "lucide-react";
@@ -63,6 +63,7 @@ export function TestimonialsSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
           >
             {/* Stars */}
             <div className="flex justify-center mb-4">
@@ -97,6 +98,7 @@ export function TestimonialsSection() {
                 }`}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
+                style={{ willChange: 'transform', transform: 'translateZ(0)' }}
               />
             ))}
           </div>

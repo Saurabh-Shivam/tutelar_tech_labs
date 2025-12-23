@@ -1,17 +1,21 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { AnimatedSection } from './AnimatedSection';
 
 const stats = [
-  { label: 'Threats Blocked', target: 500, suffix: 'K+' },
-  { label: 'Clients Protected', target: 35, suffix: '+' },
-  { label: 'Global Coverage', target: 15, suffix: '+ ' },
-  {
-  label: 'Support Score',
-  target: 100,           // animates to 100
-  display: '24/7',       // optional custom display if you want text instead of final number
-  suffix: '%'
-},
+  { label: 'Years of Cumulative Experience', target: 30, suffix: '+' },
+  //{ label: 'Satisfied Clients', target: 20, suffix: '+' },
+  { label: 'Certifications', target: 40, suffix: '+ ' },
+    { label: 'Hours of project implementation', target: 500, suffix: '+ ' },
+      { label: 'Hours of support', target: 1300, suffix: '+ ' },
+       // { label: 'Global Coverage', target: 15, suffix: '+ ' },
+       // { label: 'Product Handling ', target: 20, suffix: '+ ' },  
+//   {
+//   label: 'Support Score',
+//   target: 100,           // animates to 100
+//   display: '24/7',       // optional custom display if you want text instead of final number
+//   suffix: '%'
+// },
 
 ];
 
@@ -62,6 +66,7 @@ function StatCard({ label, target, suffix, delay = 0 }) {
     <motion.div
       ref={ref}
       className="p-8 dark:bg-[#0D0F1A] bg-white rounded-xl border dark:border-white/10 border-black/10 shadow-xl dark:shadow-cyan-500/5 shadow-black/10 hover-lift"
+      style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, delay }}
@@ -70,6 +75,7 @@ function StatCard({ label, target, suffix, delay = 0 }) {
     >
       <motion.h3
         className="text-4xl font-bold text-cyan-400 mb-2"
+        style={{ willChange: 'opacity', transform: 'translateZ(0)' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: delay + 0.2 }}

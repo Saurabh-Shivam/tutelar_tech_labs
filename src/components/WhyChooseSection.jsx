@@ -1,17 +1,17 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Check, Zap, Globe, Users } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 
 const features = [
   {
     icon: <Check className="w-10 h-10 text-cyan-400" />,
-    title: '99.9% Uptime Guarantee',
-    description: 'Uninterrupted protection with industry-leading reliability',
+    title: '100% Ownership',
+    description: 'End to End project management with full ownership of the project',
   },
   {
     icon: <Zap className="w-10 h-10 text-cyan-400" />,
-    title: 'Real-Time Threat Response',
-    description: 'Instant detection and mitigation of security threats',
+    title: 'Audit Services',
+    description: 'Security Audit for governance, compliance, and risk management',
   },
   {
     icon: <Globe className="w-10 h-10 text-cyan-400" />,
@@ -48,11 +48,13 @@ export function WhyChooseSection() {
                 transition={{ duration: 0.6 }}
                 whileHover={{ scale: 1.06, y: -10, rotate: -1.5 }}
                 whileTap={{ scale: 0.97 }}
+                style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               >
                 <motion.div
                   className="mb-4 inline-flex items-center justify-center"
                   whileHover={{ y: -8, scale: 1.14, rotate: -5 }}
                   transition={{ type: 'spring', stiffness: 260, damping: 16 }}
+                  style={{ willChange: 'transform', transform: 'translateZ(0)' }}
                 >
                   {feature.icon}
                 </motion.div>

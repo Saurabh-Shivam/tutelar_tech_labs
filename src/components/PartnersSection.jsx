@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 export function PartnersSection() {
   const partners = [
@@ -31,6 +31,7 @@ export function PartnersSection() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               className="px-8 py-6 rounded-lg dark:bg-white/5 bg-black/5 border border-[#0ABCF9]/20 backdrop-blur-sm w-full flex items-center justify-center"
             >
               <img
@@ -40,16 +41,17 @@ export function PartnersSection() {
                 loading="lazy"
               />
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="px-8 py-6 rounded-lg dark:bg-white/5 bg-black/5 border border-[#0ABCF9]/20 backdrop-blur-sm w-full flex items-center justify-center"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-                alt="AWS"
-                className="h-16 w-auto object-contain"
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="px-8 py-6 rounded-lg dark:bg-white/5 bg-black/5 border border-[#0ABCF9]/20 backdrop-blur-sm w-full flex items-center justify-center"
+            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
+              alt="AWS"
+              className="h-16 w-auto object-contain"
                 loading="lazy"
               />
             </motion.div>
@@ -70,6 +72,7 @@ export function PartnersSection() {
               repeat: Infinity,
               ease: 'linear',
             }}
+            style={{ willChange: 'transform', transform: 'translateZ(0)' }}
           >
             {duplicatedPartners.map((partner, index) => (
               <div

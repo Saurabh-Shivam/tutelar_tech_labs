@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Lock } from 'lucide-react';
 import { useMemo } from 'react';
 

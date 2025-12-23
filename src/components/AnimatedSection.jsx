@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
 export function AnimatedSection({ children, className = '', delay = 0 }) {

@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+# Tutelar_new_web
+=======
 # Tutelar Tech Labs Website
 
 A modern, responsive website for Tutelar Tech Labs built with React, Vite, and Tailwind CSS.
@@ -63,3 +66,4 @@ src/
 - Motion (Framer Motion)
 - Lucide React (Icons)
 
+>>>>>>> animation-optimizations

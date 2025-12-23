@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useMemo } from 'react';
 
 // A subtle animated grid/dots overlay applied site-wide.
