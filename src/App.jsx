@@ -19,6 +19,7 @@ import { NetworkGrid } from "./components/NetworkGrid";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { useEffect } from "react";
 import { TTLSupportServices } from "./components/TTLSupportServices";
+import { ToastContainer } from "react-toastify";
 
 export default function App() {
   useEffect(() => {
@@ -53,6 +54,7 @@ export default function App() {
       <MapSection />
       <Footer />
       <ScrollToTop />
+      <ToastContainer />
     </div>
   );
 }

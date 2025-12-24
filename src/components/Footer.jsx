@@ -19,7 +19,7 @@ export function Footer() {
   return (
     <footer className="relative dark:bg-black bg-white border-t dark:border-white/10 border-black/10 py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-60 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
@@ -52,7 +52,7 @@ export function Footer() {
           </div>
 
           {/* Product Links */}
-          <div>
+          {/* <div>
             <h4 className="text-lg font-semibold mb-4">Product</h4>
             <ul className="space-y-2">
               {links.product.map((link, index) => (
@@ -63,7 +63,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Company Links */}
           <div>
