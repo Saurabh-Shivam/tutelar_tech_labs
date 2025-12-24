@@ -43,7 +43,7 @@ export function ContactCTASection() {
         form.current.reset();
         toast.success("Message sent!", {
           position: "top-right",
-          autoClose: toastTime,
+          autoClose: 3000,
           theme: "dark",
         });
 
