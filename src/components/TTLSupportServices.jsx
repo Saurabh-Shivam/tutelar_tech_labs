@@ -99,6 +99,19 @@ const tabs = [
       "Continuous monitoring with audit-ready evidence",
     ],
   },
+  // {
+  //   id: "saas",
+  //   label: "SaaS Asset Discovery",
+  //   icon: Cloud,
+  //   content:
+  //     "Identifies all sanctioned and unsanctioned SaaS applications used across the bank/enterprise, providing complete visibility into your software inventory and potential shadow IT risks.",
+  //   bullets: [
+  //     "Discovery of sanctioned and unsanctioned SaaS usage",
+  //     "Shadow IT detection and risk scoring",
+  //     "Ownership tagging and lifecycle management",
+  //     "Integration with identity and CASB controls",
+  //   ],
+  // },
   {
     id: "access",
     label: "Access Control Governance",
@@ -112,45 +125,45 @@ const tabs = [
       "Separation of duties validation and attestations",
     ],
   },
-  {
-    id: "data",
-    label: "Data Exposure Monitoring",
-    icon: Database,
-    content:
-      "Identifies public or external sharing of sensitive customer and transactional data. We monitor data flows to prevent unauthorized leakage and ensure data sovereignty and privacy compliance.",
-    bullets: [
-      "External sharing detection and DLP policy alignment",
-      "Public bucket and repository exposure scans",
-      "Sensitive data classification and tagging",
-      "Remediation workflows with audit trails",
-    ],
-  },
-  {
-    id: "control",
-    label: "Continuous Control Monitoring",
-    icon: Sliders,
-    content:
-      "Supports regulatory requirement for ongoing security posture assessment. We provide real-time insights into your security controls, ensuring they remain effective and compliant with evolving standards.",
-    bullets: [
-      "Control library, automation and telemetry",
-      "Dashboards and alerting for posture drift",
-      "Periodic control attestation and evidence capture",
-      "Alignment to CIS, NIST and regulatory mandates",
-    ],
-  },
-  {
-    id: "audit",
-    label: "Audit & Evidence Readiness",
-    icon: FileText,
-    content:
-      "Generates audit logs and risk reports to streamline compliance processes. We ensure you are always audit-ready with comprehensive documentation and evidence of your security posture.",
-    bullets: [
-      "Centralized audit logs and immutable records",
-      "Risk reports and control effectiveness summaries",
-      "Traceability to policies and procedures",
-      "Regulatory mapping and audit support",
-    ],
-  },
+  // {
+  //   id: "data",
+  //   label: "Data Exposure Monitoring",
+  //   icon: Database,
+  //   content:
+  //     "Identifies public or external sharing of sensitive customer and transactional data. We monitor data flows to prevent unauthorized leakage and ensure data sovereignty and privacy compliance.",
+  //   bullets: [
+  //     "External sharing detection and DLP policy alignment",
+  //     "Public bucket and repository exposure scans",
+  //     "Sensitive data classification and tagging",
+  //     "Remediation workflows with audit trails",
+  //   ],
+  // },
+  // {
+  //   id: "control",
+  //   label: "Continuous Control Monitoring",
+  //   icon: Sliders,
+  //   content:
+  //     "Supports regulatory requirement for ongoing security posture assessment. We provide real-time insights into your security controls, ensuring they remain effective and compliant with evolving standards.",
+  //   bullets: [
+  //     "Control library, automation and telemetry",
+  //     "Dashboards and alerting for posture drift",
+  //     "Periodic control attestation and evidence capture",
+  //     "Alignment to CIS, NIST and regulatory mandates",
+  //   ],
+  // },
+  // {
+  //   id: "audit",
+  //   label: "Audit & Evidence Readiness",
+  //   icon: FileText,
+  //   content:
+  //     "Generates audit logs and risk reports to streamline compliance processes. We ensure you are always audit-ready with comprehensive documentation and evidence of your security posture.",
+  //   bullets: [
+  //     "Centralized audit logs and immutable records",
+  //     "Risk reports and control effectiveness summaries",
+  //     "Traceability to policies and procedures",
+  //     "Regulatory mapping and audit support",
+  //   ],
+  // },
 ];
 
 export function TTLSupportServices() {
@@ -251,7 +264,7 @@ export function TTLSupportServices() {
                               ease: "linear",
                             }}
                           />
-                          
+
                           {/* Inner Content Container */}
                           <div className="relative h-full dark:bg-[#0D0F1A]/90 bg-white/90 backdrop-blur-md p-8 md:p-12 rounded-2xl border dark:border-cyan-400/20 border-cyan-400/20 flex flex-col justify-center items-center text-center">
                             {/* Grid Background */}
@@ -306,12 +319,55 @@ export function TTLSupportServices() {
                                       key={idx}
                                       className="dark:text-gray-300 text-gray-700 text-base flex items-start gap-2"
                                     >
-                                      <span className="text-cyan-400 mt-1">•</span>
+                                      <span className="text-cyan-400 mt-1">
+                                        •
+                                      </span>
                                       {item}
                                     </li>
                                   ))}
                                 </ul>
                               )}
+
+                              {/* Floating Tech Text Labels */}
+                              {[
+                                "Zero Trust",
+                                "IDS",
+                                "IPS",
+                                "Incident Management",
+                                "AI Access",
+                                "Cloud Security",
+                                "Threat Intel",
+                                "Shadow AI",
+                                "Security Automation",
+                                "WEB Proxy",
+                                "SASE",
+                              ].map((text, i) => (
+                                <motion.div
+                                  key={text}
+                                  className="absolute text-xs font-bold text-cyan-500/30 whitespace-nowrap pointer-events-none uppercase tracking-widest drop-shadow-[0_0_5px_rgba(34,211,238,0.6)]"
+                                  initial={{
+                                    x: Math.random() * 400 - 200,
+                                    y: Math.random() * 300 - 150,
+                                    opacity: 0,
+                                  }}
+                                  animate={{
+                                    y: [10, -400],
+                                    opacity: [0, 1, 0],
+                                  }}
+                                  transition={{
+                                    duration: 5 + Math.random() * 5,
+                                    repeat: Infinity,
+                                    delay: i * 1.2,
+                                    ease: "linear",
+                                  }}
+                                  style={{
+                                    left: `${20 + Math.random() * 60}%`,
+                                    top: `${75 + Math.random() * 20}%`,
+                                  }}
+                                >
+                                  {text}
+                                </motion.div>
+                              ))}
                             </div>
                           </div>
                         </div>
