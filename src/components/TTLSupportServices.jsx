@@ -8,12 +8,23 @@ import {
   AlertTriangle,
   Bug,
   ShieldCheck,
+  UserCog,
+  PenTool,
+  Calendar,
+  ClipboardCheck,
+  Rocket,
+  Cloud,
+  Key,
+  Database,
+  Sliders,
+  FileText,
 } from "lucide-react";
 
 const tabs = [
   {
     id: "resident",
     label: "Resident Engineer Services",
+    icon: UserCog,
     content:
       "We provide OEM Certified Tech support Engineers on site to provide Security services across Network Security, Endpoint Security, Cloud Firewall deployments. We conduct Monthly and quarterly reviews and provide best practices recommendations.",
     bullets: [
@@ -26,6 +37,7 @@ const tabs = [
   {
     id: "design",
     label: "Design Review",
+    icon: PenTool,
     content:
       "We provide high level and low level Design reviews for the Network Security implementations, SOC Deployments. We provide Security framework for the organisations to adopt to protect against the sophisticated threats.",
     bullets: [
@@ -38,6 +50,7 @@ const tabs = [
   {
     id: "amc",
     label: "Annual Maintenance Contract",
+    icon: Calendar,
     content:
       "Annual maintenance coverage provides access to vendor-supported services, software updates, threat intelligence, and technical support that minimizes operational risk. We perform BCP activities to ensure business continuity for the Enterprise we serve. Our approach is outcome based ie Reduced downtime through timely support and proactive updates.",
     bullets: [
@@ -50,6 +63,7 @@ const tabs = [
   {
     id: "bpa",
     label: "Best Practices Assessment",
+    icon: ClipboardCheck,
     content:
       "Audit the configurations of existing security Stack and provide recommendations based on the Vendors’ blueprint. Identify configuration gaps, security risks, and optimization suggestions. Improve performance, user experience, and operational efficiency. We provide Documentation and checklist to adopt to the Best practices configuration.",
     bullets: [
@@ -62,6 +76,7 @@ const tabs = [
   {
     id: "implementation",
     label: "Project Implementation",
+    icon: Rocket,
     content:
       "End-to-end implementation services ensuring seamless integration of security solutions. We manage the entire lifecycle from planning and architecture to deployment and fine-tuning, ensuring your security infrastructure is robust, compliant, and aligned with business objectives.",
     bullets: [
@@ -74,6 +89,7 @@ const tabs = [
   {
     id: "compliance",
     label: "Compliance Audit Services",
+    icon: ShieldCheck,
     content:
       "We provide continuous visibility, configuration assessment, and risk management for SaaS applications. It helps regulated entities meet cybersecurity, governance, and risk management requirements by ensuring secure configuration, access control, data protection, and continuous monitoring of SaaS platforms.",
     bullets: [
@@ -84,20 +100,9 @@ const tabs = [
     ],
   },
   {
-    id: "saas",
-    label: "SaaS Asset Discovery",
-    content:
-      "Identifies all sanctioned and unsanctioned SaaS applications used across the bank/enterprise, providing complete visibility into your software inventory and potential shadow IT risks.",
-    bullets: [
-      "Discovery of sanctioned and unsanctioned SaaS usage",
-      "Shadow IT detection and risk scoring",
-      "Ownership tagging and lifecycle management",
-      "Integration with identity and CASB controls",
-    ],
-  },
-  {
     id: "access",
     label: "Access Control Governance",
+    icon: Key,
     content:
       "Detects excessive privileges, dormant users, and shared accounts. We help enforce least-privilege principles and ensure that access rights are properly managed and audited.",
     bullets: [
@@ -110,6 +115,7 @@ const tabs = [
   {
     id: "data",
     label: "Data Exposure Monitoring",
+    icon: Database,
     content:
       "Identifies public or external sharing of sensitive customer and transactional data. We monitor data flows to prevent unauthorized leakage and ensure data sovereignty and privacy compliance.",
     bullets: [
@@ -122,6 +128,7 @@ const tabs = [
   {
     id: "control",
     label: "Continuous Control Monitoring",
+    icon: Sliders,
     content:
       "Supports regulatory requirement for ongoing security posture assessment. We provide real-time insights into your security controls, ensuring they remain effective and compliant with evolving standards.",
     bullets: [
@@ -134,6 +141,7 @@ const tabs = [
   {
     id: "audit",
     label: "Audit & Evidence Readiness",
+    icon: FileText,
     content:
       "Generates audit logs and risk reports to streamline compliance processes. We ensure you are always audit-ready with comprehensive documentation and evidence of your security posture.",
     bullets: [
@@ -200,183 +208,111 @@ export function TTLSupportServices() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.4 }}
-                        className="h-full"
+                        className="h-full flex flex-col gap-6"
                       >
-                        <div
-                          className="
-  h-full
-  dark:bg-[#0D0F1A]/80 bg-white/80
-  backdrop-blur-md
-  p-8 md:p-12
-  rounded-2xl
-  border-2
-  dark:border-cyan-400/70 border-cyan-400/60
-  shadow-[0_0_30px_rgba(34,211,238,0.45)]
-  relative overflow-hidden group
-  flex flex-col justify-center items-center text-center
-"
-                          style={{
-                            fontFamily: '"Times New Roman", Times, serif',
+                        {/* Heading Div */}
+                        <motion.div
+                          initial={{ scale: 0.5, opacity: 0, y: 50 }}
+                          animate={{ scale: 1, opacity: 1, y: 0 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 260,
+                            damping: 20,
+                            delay: 0.1,
                           }}
+                          className="flex flex-col items-center justify-center p-6 text-center"
                         >
-                          {/* Grid Background */}
-                          <div
-                            className="absolute inset-0 opacity-[0.05] dark:opacity-[0.1]"
-                            style={{
-                              backgroundImage: `linear-gradient(#06b6d4 1px, transparent 1px), linear-gradient(90deg, #06b6d4 1px, transparent 1px)`,
-                              backgroundSize: "40px 40px",
-                            }}
-                          />
-
-                          <div className="absolute bottom-4 left-0 right-0 h-36 opacity-50 pointer-events-none">
-                            {[
-                              { Icon: Bug, className: "text-red-400" },
-                              {
-                                Icon: AlertTriangle,
-                                className: "text-orange-400",
-                              },
-                              { Icon: ShieldCheck, className: "text-cyan-400" },
-                              { Icon: Lock, className: "text-cyan-300" },
-                              { Icon: ShieldCheck, className: "text-cyan-400" },
-                              { Icon: Bug, className: "text-red-400" },
-                              {
-                                Icon: AlertTriangle,
-                                className: "text-orange-400",
-                              },
-                            ].map(({ Icon, className }, i) => (
-                              <motion.div
-                                key={i}
-                                className="absolute"
-                                style={{
-                                  left: `${((i * 14) % 90) + 5}%`,
-                                  bottom: `${(i % 3) * 8}px`,
-                                }}
-                                animate={{
-                                  y: [0, -10, 0],
-                                  x: [0, 30, 0],
-                                  opacity: [0.2, 0.8, 0.2],
-                                }}
-                                transition={{
-                                  duration: 4 + (i % 3),
-                                  repeat: Infinity,
-                                  ease: "easeInOut",
-                                  delay: i * 0.3,
-                                }}
-                              >
-                                <Icon
-                                  className={`w-12 h-12 ${className} drop-shadow-[0_0_10px_rgba(34,211,238,0.45)]`}
-                                />
-                              </motion.div>
-                            ))}
+                          <div className="mb-4 relative">
+                            <motion.div
+                              animate={{ y: [0, -10, 0] }}
+                              transition={{
+                                duration: 1.5,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                              }}
+                            >
+                              <tab.icon className="w-16 h-16 text-cyan-400 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]" />
+                            </motion.div>
                           </div>
+                          <h3 className="text-3xl font-bold text-cyan-500 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                            {tab.label}
+                          </h3>
+                        </motion.div>
 
-                          {/* Floating Security Elements */}
+                        {/* Details Div */}
+                        <div className="relative flex-1 group rounded-2xl overflow-hidden p-[2px]">
+                          {/* Rotating Border Glow */}
                           <motion.div
-                            className="absolute top-10 right-10 text-cyan-400/20 drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]"
-                            animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
-                            transition={{
-                              duration: 5,
-                              repeat: Infinity,
-                              ease: "easeInOut",
-                            }}
-                          >
-                            <Shield size={120} />
-                          </motion.div>
-                          <motion.div
-                            className="absolute bottom-10 left-10 text-cyan-400/20 drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]"
-                            animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
-                            transition={{
-                              duration: 7,
-                              repeat: Infinity,
-                              ease: "easeInOut",
-                              delay: 1,
-                            }}
-                          >
-                            <Lock size={100} />
-                          </motion.div>
-                          <motion.div
-                            className="absolute top-1/2 left-10 text-cyan-400/20 drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]"
-                            animate={{
-                              scale: [1, 1.2, 1],
-                              opacity: [0.1, 0.3, 0.1],
-                            }}
+                            className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0_340deg,#06b6d4_360deg)] opacity-70"
+                            animate={{ rotate: 360 }}
                             transition={{
                               duration: 4,
                               repeat: Infinity,
-                              ease: "easeInOut",
-                              delay: 2,
+                              ease: "linear",
                             }}
-                          >
-                            <Activity size={60} />
-                          </motion.div>
-
-                          {/* Floating Tech Text */}
-                          {[
-                            "Zero Trust",
-                            "IDS",
-                            "IPS",
-                            "Incident Management",
-                            "AI Access",
-                            "Cloud Security",
-                            "Threat Intel",
-                            "Shadow AI",
-                            "Security Automation",
-                            "WEB Proxy",
-                            "Secure Access Service Edge",
-                          ].map((text, i) => (
-                            <motion.div
-                              key={text}
-                              className="absolute text-sm font-bold text-cyan-500/30 whitespace-nowrap pointer-events-none uppercase tracking-widest drop-shadow-[0_0_5px_rgba(34,211,238,0.6)]"
-                              initial={{
-                                x: Math.random() * 400 - 200,
-                                y: Math.random() * 400 - 200,
-                                opacity: 0,
-                              }}
-                              animate={{
-                                y: [10, -700],
-                                opacity: [0, 1, 0],
-                              }}
-                              transition={{
-                                duration: 5 + Math.random() * 5,
-                                repeat: Infinity,
-                                delay: i * 1.5,
-                                ease: "linear",
-                              }}
+                          />
+                          
+                          {/* Inner Content Container */}
+                          <div className="relative h-full dark:bg-[#0D0F1A]/90 bg-white/90 backdrop-blur-md p-8 md:p-12 rounded-2xl border dark:border-cyan-400/20 border-cyan-400/20 flex flex-col justify-center items-center text-center">
+                            {/* Grid Background */}
+                            <div
+                              className="absolute inset-0 opacity-[0.05] dark:opacity-[0.1] rounded-2xl overflow-hidden"
                               style={{
-                                left: `${20 + Math.random() * 60}%`,
-                                top: `${80 + Math.random() * 20}%`,
+                                backgroundImage: `linear-gradient(#06b6d4 1px, transparent 1px), linear-gradient(90deg, #06b6d4 1px, transparent 1px)`,
+                                backgroundSize: "40px 40px",
                               }}
-                            >
-                              {text}
-                            </motion.div>
-                          ))}
+                            />
 
-                          {/* Content */}
-                          <div className="relative z-10 max-w-2xl mx-auto">
-                            <h3 className="text-3xl font-bold mb-8 text-cyan-500 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
-                              {tab.label}
-                            </h3>
+                            {/* Floating Security Elements (Background) */}
+                            <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-2xl">
+                              <motion.div
+                                className="absolute top-10 right-10 text-cyan-400/10"
+                                animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
+                                transition={{
+                                  duration: 5,
+                                  repeat: Infinity,
+                                  ease: "easeInOut",
+                                }}
+                              >
+                                <Shield size={100} />
+                              </motion.div>
+                              <motion.div
+                                className="absolute bottom-10 left-10 text-cyan-400/10"
+                                animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
+                                transition={{
+                                  duration: 7,
+                                  repeat: Infinity,
+                                  ease: "easeInOut",
+                                  delay: 1,
+                                }}
+                              >
+                                <Lock size={80} />
+                              </motion.div>
+                            </div>
 
-                            <motion.p
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ delay: 0.2 }}
-                              className="dark:text-gray-200 text-gray-800 leading-relaxed text-lg md:text-xl font-medium tracking-wide"
-                            >
-                              {tab.content}
-                            </motion.p>
-                            {tab.bullets && (
-                              <ul className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3 text-left mx-auto max-w-3xl">
-                                {tab.bullets.map((item, idx) => (
-                                  <li
-                                    key={idx}
-                                    className="dark:text-gray-300 text-gray-700 text-base"
-                                  >
-                                    • {item}
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
+                            <div className="relative z-10 max-w-2xl mx-auto">
+                              <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2 }}
+                                className="dark:text-gray-200 text-gray-800 leading-relaxed text-lg md:text-xl font-medium tracking-wide"
+                              >
+                                {tab.content}
+                              </motion.p>
+                              {tab.bullets && (
+                                <ul className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3 text-left mx-auto max-w-3xl">
+                                  {tab.bullets.map((item, idx) => (
+                                    <li
+                                      key={idx}
+                                      className="dark:text-gray-300 text-gray-700 text-base flex items-start gap-2"
+                                    >
+                                      <span className="text-cyan-400 mt-1">•</span>
+                                      {item}
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </motion.div>
