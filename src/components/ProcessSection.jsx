@@ -39,7 +39,7 @@ const steps = [
 },
 {
   icon: <Eye className="w-10 h-10 text-cyan-400" />,
-  title: 'Monitoring',
+  title: 'Monitor',
   description: (
     <>
       Continuous monitoring and proactive threat detection.

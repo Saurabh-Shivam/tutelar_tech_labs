@@ -5,32 +5,32 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Girisha R",
-    role: "Enterprise Programs, to Vidur Ramnarayan",
+    name: "Senior Manager ITES",
+    // role: "Enterprise Programs, to Vidur Ramnarayan",
     content:
       "Thank you team for flawless support. We stayed in good shape with zero observed maintenance impact—customer preference as usual.",
   },
   {
-    name: "Narasimha Meladi",
-    role: "Security Lead",
+    name: "Security Lead PSU",
+    // role: "Security Lead",
     content:
       "I extend my regards to your team—Prabhu and Seenu—for exceptional support and technical expertise on Palo Alto products. The PoC was well executed with all use cases and reports.",
   },
   {
-    name: "Sachin Warad",
-    role: "Program Manager",
+    name: "Director ECommerce",
+    // role: "Program Manager",
     content:
       "Appreciation for the first Panorama to SCM migration—it was very well planned and executed. Amazing job, Tutelar team!",
   },
   {
-    name: "Apth Prabhu M",
-    role: "Infosec Lead",
+    name: "Manager SOC Pvt Bank",
+    // role: "Infosec Lead",
     content:
       "Arun’s work on Cortex XDR drove adoption, validated incidents with Infosec, and solved gaps through automation, dashboards, and BIOC rules—streamlining operations significantly.",
   },
   {
-    name: "Selva / Arun",
-    role: "Customer Collaboration",
+    name: "Senior Manager InfoSec (Gaming and Ecommerce)",
+    // role: "Gaming an Ecommerce",
     content:
       "Arun was instrumental in ensuring success of the Cortex XDR solution—resolving issues with TAC, highlighting new versions, and enabling faster, smarter responses.",
   },

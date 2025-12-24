@@ -9,8 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 export function ContactCTASection() {
   const [status, setStatus] = useState("");
   const form = useRef(null);
+  const [isSending, setIsSending] = useState(false);
 
-  // Initialize EmailJS once
   useEffect(() => {
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
     if (!publicKey) {
@@ -22,28 +22,29 @@ export function ContactCTASection() {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    if (isSending) return; // safety guard
 
     const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const contactTemplateID = import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID;
     const replyTemplateID = import.meta.env.VITE_EMAILJS_REPLY_TEMPLATE_ID;
-    const toastTime = import.meta.env.VITE_EMAILJS_TOAST_TIME || 3000;
 
     if (!serviceID || !contactTemplateID || !replyTemplateID) {
       console.error("Template IDs or Service ID missing");
       return;
     }
 
-    // 1. Send email to you
+    setIsSending(true);
+
     emailjs
       .sendForm(serviceID, contactTemplateID, form.current)
       .then(() => {
-        // 2. Send auto reply to the user
-        emailjs.sendForm(serviceID, replyTemplateID, form.current);
-
+        return emailjs.sendForm(serviceID, replyTemplateID, form.current);
+      })
+      .then(() => {
         form.current.reset();
+
         toast.success("Message sent!", {
           position: "top-right",
-          autoClose: 3000,
           theme: "dark",
         });
 
@@ -54,15 +55,17 @@ export function ContactCTASection() {
         console.error("EmailJS Error:", err);
         toast.error("Try again?", {
           position: "top-right",
-          autoClose: 3000,
           theme: "dark",
         });
+      })
+      .finally(() => {
+        setIsSending(false);
       });
   };
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer autoClose={3000} position="top-right" theme="dark" />
 
       <section
         id="contact"
@@ -75,7 +78,7 @@ export function ContactCTASection() {
 
         <div className="relative max-w-6xl mx-auto px-6 z-10">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start">
-            {/* Left: Contact Info */}
+            {/* Left Contact Info */}
             <AnimatedSection className="contact-info space-y-4">
               <motion.h3
                 className="text-4xl font-bold"
@@ -123,7 +126,7 @@ export function ContactCTASection() {
               </motion.div>
             </AnimatedSection>
 
-            {/* Right: Contact Form */}
+            {/* Right Contact Form */}
             <AnimatedSection delay={0.1}>
               <motion.form
                 ref={form}
@@ -167,11 +170,12 @@ export function ContactCTASection() {
                 <div className="form-actions flex items-center gap-4">
                   <motion.button
                     type="submit"
-                    className="btn primary px-5 py-2 rounded-md bg-gradient-to-r from-[#0ABCF9] to-[#6A4DFB] text-white font-semibold shadow-lg hover:scale-105"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    disabled={isSending}
+                    className="btn primary px-5 py-2 rounded-md bg-gradient-to-r from-[#0ABCF9] to-[#6A4DFB] text-white font-semibold shadow-lg hover:scale-105 disabled:opacity-50"
+                    whileHover={{ scale: isSending ? 1 : 1.05 }}
+                    whileTap={{ scale: isSending ? 1 : 0.95 }}
                   >
-                    Send message
+                    {isSending ? "Sending..." : "Send message"}
                   </motion.button>
 
                   <div className="text-sm text-cyan-300">{status}</div>

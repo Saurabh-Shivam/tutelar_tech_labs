@@ -17,7 +17,8 @@ export function HeroSection() {
   }, []);
 
   const headingWords = useMemo(() => {
-    const words = ["Cybersecurity", "is", "in", "our", "DNA"];
+    const words = ["Security", "Engineered", "for", "Modern", "Enterprises"];
+
     const offsets = [
       { x: -50, y: 18 },
       { x: 30, y: -30 },

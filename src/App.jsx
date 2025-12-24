@@ -54,7 +54,7 @@ export default function App() {
       <MapSection />
       <Footer />
       <ScrollToTop />
-      <ToastContainer />
+      <ToastContainer autoClose={3000} />
     </div>
   );
 }

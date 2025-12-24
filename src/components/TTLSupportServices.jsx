@@ -112,19 +112,19 @@ const tabs = [
   //     "Integration with identity and CASB controls",
   //   ],
   // },
-  {
-    id: "access",
-    label: "Access Control Governance",
-    icon: Key,
-    content:
-      "Detects excessive privileges, dormant users, and shared accounts. We help enforce least-privilege principles and ensure that access rights are properly managed and audited.",
-    bullets: [
-      "Least-privilege enforcement and role reviews",
-      "Dormant and orphan account remediation",
-      "JIT access and approval workflows",
-      "Separation of duties validation and attestations",
-    ],
-  },
+  // {
+  //   id: "access",
+  //   label: "Access Control Governance",
+  //   icon: Key,
+  //   content:
+  //     "Detects excessive privileges, dormant users, and shared accounts. We help enforce least-privilege principles and ensure that access rights are properly managed and audited.",
+  //   bullets: [
+  //     "Least-privilege enforcement and role reviews",
+  //     "Dormant and orphan account remediation",
+  //     "JIT access and approval workflows",
+  //     "Separation of duties validation and attestations",
+  //   ],
+  // },
   // {
   //   id: "data",
   //   label: "Data Exposure Monitoring",

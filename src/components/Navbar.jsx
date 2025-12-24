@@ -156,7 +156,7 @@ export function Navbar() {
           ],
         },
         {
-          label: "Security Operation",
+          label: "Security Operations",
           children: [
             {
               label: "EDR/XDR",
