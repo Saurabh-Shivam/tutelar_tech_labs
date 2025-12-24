@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import { FloatingParticles } from "./FloatingParticles";
 import { GlowingButton } from "./GlowingButton";
 import { Shield, Lock, Zap } from "lucide-react";
@@ -17,7 +17,7 @@ export function HeroSection() {
   }, []);
 
   const headingWords = useMemo(() => {
-    const words = ["Cybersecurity", "solutions", "for", "a", "safer", "world"];
+    const words = ["Cybersecurity", "is", "in", "our", "DNA"];
     const offsets = [
       { x: -50, y: 18 },
       { x: 30, y: -30 },
@@ -63,9 +63,9 @@ export function HeroSection() {
           backgroundImage:
             "radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px)",
           backgroundSize: "120px 120px, 56px 56px, 56px 56px",
-          willChange: 'background-position',
-          transform: 'translateZ(0)',
-          contain: 'layout paint',
+          willChange: "background-position",
+          transform: "translateZ(0)",
+          contain: "layout paint",
         }}
         animate={{
           backgroundPosition: [
@@ -79,7 +79,11 @@ export function HeroSection() {
       {/* Scanning aurora */}
       <motion.div
         className="pointer-events-none absolute inset-x-0 top-1/3 h-44 bg-gradient-to-r from-transparent via-white/18 to-transparent blur-xl mix-blend-screen"
-        style={{ willChange: 'transform', transform: 'translateZ(0)', contain: 'layout paint' }}
+        style={{
+          willChange: "transform",
+          transform: "translateZ(0)",
+          contain: "layout paint",
+        }}
         animate={{ x: ["-20%", "120%"] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -87,7 +91,7 @@ export function HeroSection() {
       {/* Floating cyber nodes */}
       <motion.div
         className="pointer-events-none absolute inset-0"
-        style={{ willChange: 'opacity', transform: 'translateZ(0)' }}
+        style={{ willChange: "opacity", transform: "translateZ(0)" }}
         animate={{ opacity: [0.35, 0.7, 0.35] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -101,8 +105,8 @@ export function HeroSection() {
               top: `${node.top}%`,
               left: `${node.left}%`,
               boxShadow: "0 0 8px #0ABCF9, 0 0 12px rgba(255,255,255,0.32)",
-              willChange: 'transform, opacity',
-              transform: 'translateZ(0)',
+              willChange: "transform, opacity",
+              transform: "translateZ(0)",
             }}
             animate={{
               y: [0, -8, 0],
@@ -122,7 +126,10 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-16 md:pt-24">
         <motion.div
-          style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
+          style={{
+            willChange: "transform, opacity",
+            transform: "translateZ(0)",
+          }}
           initial={{
             opacity: 0,
             x: randomOffset.x,
@@ -136,7 +143,11 @@ export function HeroSection() {
             {headingWords.map(({ word, offset, delay }) => (
               <motion.span
                 key={word + delay}
-                style={{ willChange: 'transform, opacity', transform: 'translateZ(0)', display: 'inline-block' }}
+                style={{
+                  willChange: "transform, opacity",
+                  transform: "translateZ(0)",
+                  display: "inline-block",
+                }}
                 initial={{ opacity: 0, x: offset.x, y: offset.y, rotate: -2 }}
                 animate={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
                 transition={{
@@ -156,10 +167,25 @@ export function HeroSection() {
           </p>
 
           <div className="flex justify-center gap-6">
-            <GlowingButton onClick={() => {
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}>Get Started</GlowingButton>
-            <GlowingButton variant="outline">Learn More</GlowingButton>
+            <GlowingButton
+              onClick={() => {
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Get Started
+            </GlowingButton>
+            <GlowingButton
+              variant="outline"
+              onClick={() => {
+                document
+                  .getElementById("ttl-support")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Learn More
+            </GlowingButton>
           </div>
         </motion.div>
 
@@ -167,7 +193,10 @@ export function HeroSection() {
         <div className="flex justify-center gap-12 mt-20 mb-24">
           <motion.div
             className="flex flex-col items-center gap-2 relative z-10"
-            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
+            style={{
+              willChange: "transform, opacity",
+              transform: "translateZ(0)",
+            }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ y: -6, scale: 1.12 }}
@@ -179,7 +208,10 @@ export function HeroSection() {
 
           <motion.div
             className="flex flex-col items-center gap-2 relative z-10"
-            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
+            style={{
+              willChange: "transform, opacity",
+              transform: "translateZ(0)",
+            }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -192,7 +224,10 @@ export function HeroSection() {
 
           <motion.div
             className="flex flex-col items-center gap-2 relative z-10"
-            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
+            style={{
+              willChange: "transform, opacity",
+              transform: "translateZ(0)",
+            }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -208,14 +243,14 @@ export function HeroSection() {
       {/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 pointer-events-none"
-        style={{ willChange: 'transform', transform: 'translateZ(0)' }}
+        style={{ willChange: "transform", transform: "translateZ(0)" }}
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity }}
       >
         <div className="w-6 h-10 border-2 border-[#0ABCF9] rounded-full flex justify-center pt-2">
           <motion.div
             className="w-1.5 h-1.5 bg-[#0ABCF9] rounded-full"
-            style={{ willChange: 'transform', transform: 'translateZ(0)' }}
+            style={{ willChange: "transform", transform: "translateZ(0)" }}
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           />

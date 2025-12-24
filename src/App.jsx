@@ -1,23 +1,24 @@
-import { Navbar } from './components/Navbar';
-import { HeroSection } from './components/HeroSection';
-import { OurStorySection } from './components/OurStorySection';
-import { PartnersSection } from './components/PartnersSection';
-import { ServicesSection } from './components/ServicesSection';
-import { WhyChooseSection } from './components/WhyChooseSection';
-import { ProcessSection } from './components/ProcessSection';
-import { AboutSection } from './components/AboutSection';
-import { StatsSection } from './components/StatsSection';
-import { TestimonialsSection } from './components/TestimonialsSection';
-import { ContactCTASection } from './components/ContactCTASection';
-import { MapSection } from './components/MapSection';
-import { Footer } from './components/Footer';
-import { FloatingShield } from './components/FloatingShield';
-import { GlobalGrid } from './components/GlobalGrid';
-import { FloatingLocks } from './components/FloatingLocks';
-import { MatrixRain } from './components/MatrixRain';
-import { NetworkGrid } from './components/NetworkGrid';
-import { ScrollToTop } from './components/ScrollToTop';
-import { useEffect } from 'react';
+import { Navbar } from "./components/Navbar";
+import { HeroSection } from "./components/HeroSection";
+import { OurStorySection } from "./components/OurStorySection";
+import { PartnersSection } from "./components/PartnersSection";
+import { ServicesSection } from "./components/ServicesSection";
+import { WhyChooseSection } from "./components/WhyChooseSection";
+import { ProcessSection } from "./components/ProcessSection";
+import { AboutSection } from "./components/AboutSection";
+import { StatsSection } from "./components/StatsSection";
+import { TestimonialsSection } from "./components/TestimonialsSection";
+import { ContactCTASection } from "./components/ContactCTASection";
+import { MapSection } from "./components/MapSection";
+import { Footer } from "./components/Footer";
+import { FloatingShield } from "./components/FloatingShield";
+import { GlobalGrid } from "./components/GlobalGrid";
+import { FloatingLocks } from "./components/FloatingLocks";
+import { MatrixRain } from "./components/MatrixRain";
+import { NetworkGrid } from "./components/NetworkGrid";
+import { ScrollToTop } from "./components/ScrollToTop";
+import { useEffect } from "react";
+import { TTLSupportServices } from "./components/TTLSupportServices";
 
 export default function App() {
   useEffect(() => {
@@ -25,7 +26,7 @@ export default function App() {
       const id = window.location.hash.slice(1);
       const el = document.getElementById(id);
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
   }, []);
@@ -41,7 +42,8 @@ export default function App() {
       <HeroSection />
       <OurStorySection />
       <PartnersSection />
-      <ServicesSection />
+      {/* <ServicesSection /> */}
+      <TTLSupportServices />
       <WhyChooseSection />
       <ProcessSection />
       <AboutSection />

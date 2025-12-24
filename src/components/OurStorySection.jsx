@@ -1,22 +1,25 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { AnimatedSection } from './AnimatedSection';
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatedSection } from "./AnimatedSection";
 
 const tabs = [
   {
-    id: 'who',
-    label: 'Who We Are',
-    content: 'We are a team of experienced professionals passionate about cybersecurity and digital transformation. Our mission is to help companies transform IT services safe and secure.',
+    id: "who",
+    label: "Who We Are",
+    content:
+      "We are a team of experienced professionals passionate about cybersecurity and digital transformation. Our mission is to help companies transform IT services safe and secure.",
   },
   {
-    id: 'mission',
-    label: 'Our Mission',
-    content: 'Trusted advisor to our customers and Partner of choice for our OEMs.',
+    id: "mission",
+    label: "Our Mission",
+    content:
+      "Trusted advisor to our customers and Partner of choice for our OEMs.",
   },
   {
-    id: 'vision',
-    label: 'Our Vision',
-    content: 'To be a Leader in Cybersecurity and Digital Transformation Delivering Trust at Scale.',
+    id: "vision",
+    label: "Our Vision",
+    content:
+      "To be a Leader in Cybersecurity and Digital Transformation Services.",
   },
 ];
 
@@ -24,14 +27,18 @@ export function OurStorySection() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   return (
-    <section id="our-story" className="section py-20 dark:text-white text-black">
+    <section
+      id="our-story"
+      className="section py-20 dark:text-white text-black"
+    >
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
             Our Story
           </h2>
           <p className="text-center dark:text-gray-400 text-gray-700 max-w-3xl mx-auto mb-12">
-            Discover our journey, mission, and vision that drive our commitment to cybersecurity.
+            Discover our journey, mission, and vision that drive our commitment
+            to cybersecurity.
           </p>
         </AnimatedSection>
 
@@ -46,14 +53,18 @@ export function OurStorySection() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`
                       px-6 py-3 rounded-lg font-semibold transition-all border
-                      ${activeTab === tab.id 
-                        ? 'bg-cyan-500 text-black border-cyan-500' 
-                        : 'dark:border-gray-700 border-black/20 dark:text-gray-300 text-gray-700 hover:border-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-400'
+                      ${
+                        activeTab === tab.id
+                          ? "bg-cyan-500 text-black border-cyan-500"
+                          : "dark:border-gray-700 border-black/20 dark:text-gray-300 text-gray-700 hover:border-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-400"
                       }
                     `}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    style={{ willChange: 'transform', transform: 'translateZ(0)' }}
+                    style={{
+                      willChange: "transform",
+                      transform: "translateZ(0)",
+                    }}
                   >
                     {tab.label}
                   </motion.button>
@@ -71,8 +82,11 @@ export function OurStorySection() {
                       y: activeTab === tab.id ? 0 : 20,
                     }}
                     transition={{ duration: 0.4 }}
-                    className={activeTab === tab.id ? 'block' : 'hidden'}
-                    style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
+                    className={activeTab === tab.id ? "block" : "hidden"}
+                    style={{
+                      willChange: "transform, opacity",
+                      transform: "translateZ(0)",
+                    }}
                   >
                     <div className="dark:bg-[#0D0F1A] bg-white p-8 rounded-xl border dark:border-white/10 border-black/10 shadow-xl">
                       <motion.p
@@ -84,7 +98,10 @@ export function OurStorySection() {
                           ease: [0.25, 0.1, 0.25, 1],
                         }}
                         className="dark:text-gray-300 text-gray-700 leading-relaxed text-lg"
-                        style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
+                        style={{
+                          willChange: "transform, opacity",
+                          transform: "translateZ(0)",
+                        }}
                       >
                         {tab.content}
                       </motion.p>
