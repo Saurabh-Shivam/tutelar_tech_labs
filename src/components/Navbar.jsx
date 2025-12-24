@@ -205,7 +205,7 @@ export function Navbar() {
     },
     { label: "Partnership", id: "partnership" },
     { label: "About", id: "about" },
-    { label: "Career", url: "/career", newTab: false },
+    { label: "Careers", url: "/careers", newTab: false },
   ];
 
   const handleNavClick = (e, target) => {

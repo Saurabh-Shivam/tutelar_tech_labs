@@ -16,7 +16,7 @@ const tabs = [
   {
     id: 'vision',
     label: 'Our Vision',
-    content: 'To be a Global Leader in Cybersecurity and Digital Transformation Delivering Trust at Scale.',
+    content: 'To be a Leader in Cybersecurity and Digital Transformation Delivering Trust at Scale.',
   },
 ];
 

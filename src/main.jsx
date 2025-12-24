@@ -79,7 +79,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/dspm" element={<DSPMPage />} />
         <Route path="/ot-iot-security" element={<OTIoTSecurityPage />} />
         <Route path="/iam-product" element={<IAMProductPage />} />
-        <Route path="/career" element={<CareerPage />} />
+        <Route path="/careers" element={<CareerPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
