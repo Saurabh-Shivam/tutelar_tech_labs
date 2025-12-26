@@ -49,6 +49,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/about" element={<App />} />
+        <Route path="/partnership" element={<App />} />
+        <Route path="/contact" element={<App />} />
         <Route path="/network-security" element={<NetworkSecurityPage />} />
         <Route path="/cloud-security" element={<CloudSecurityPage />} />
         <Route path="/security-operation" element={<SecurityOperationPage />} />

@@ -18,19 +18,36 @@ import { MatrixRain } from "./components/MatrixRain";
 import { NetworkGrid } from "./components/NetworkGrid";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { TTLSupportServices } from "./components/TTLSupportServices";
 import { ToastContainer } from "react-toastify";
 
 export default function App() {
+  const location = useLocation();
+
   useEffect(() => {
-    if (window.location.hash) {
-      const id = window.location.hash.slice(1);
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+    const path = location.pathname;
+    const hash = location.hash;
+    let targetId = null;
+
+    if (hash) {
+      targetId = hash.slice(1);
+    } else if (path !== "/") {
+      // Remove leading slash to get ID (e.g. "/about" -> "about")
+      targetId = path.slice(1);
     }
-  }, []);
+
+    if (targetId) {
+      setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   return (
     <div className="min-h-screen dark:bg-black dark:text-white bg-white text-black overflow-x-hidden relative">

@@ -13,42 +13,44 @@ export function AboutSection() {
 
   return (
     <section id="about" className="relative py-32 overflow-hidden">
-      {/* Background effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#6A4DFB] opacity-20 blur-[120px] rounded-full" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00FFB4] opacity-20 blur-[120px] rounded-full" />
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 opacity-20 blur-[120px] rounded-full bg-[#6A4DFB]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 opacity-20 blur-[120px] rounded-full bg-[#00FFB4]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left side - Text */}
+
           <AnimatedSection>
-            <p className="text-cyan-300 uppercase tracking-[0.35em] text-xs mb-4">
+            <p className="text-cyan-300 uppercase tracking-[0.35em] text-xs mb-6">
               Services Redefined
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              One Partner
-              <ArrowDown className="w-8 h-8 mx-auto my-3 text-cyan-400" />
-              <span className="block text-cyan-400 mt-2">
-                End-to-End Cybersecurity
-              </span>
-            </h2>
+            {/* Updated heading section */}
+            <div className="flex flex-col items-center text-center gap-3 mb-10">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                  One Partner
+                </h2>
+              </div>
+
+              <div className="flex justify-center">
+                <ArrowDown className="w-8 h-8 text-cyan-400" />
+              </div>
+
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-cyan-400 leading-tight">
+                  End to End Cybersecurity
+                </h2>
+              </div>
+            </div>
 
             <p className="dark:text-gray-300 text-gray-800 text-lg leading-relaxed max-w-xl mb-12">
-              Tutelar Tech Labs, headquartered in Bangalore with a regional office
-              in Madurai, was founded in 2022 to deliver specialized cybersecurity
-              and network solutions. We secure enterprise environments through
-              deep domain expertise, advanced technology integration, and a
-              customer-centric approach.
+              Tutelar Tech Labs, headquartered in Bangalore with a regional office in Madurai, was founded in 2022 to deliver specialized cybersecurity and network solutions. We secure enterprise environments through deep domain expertise and a customer-first mindset.
             </p>
 
-            {/* What sets us apart */}
             <div className="mb-14">
-              <h4 className="text-2xl font-semibold mb-6">
-                What Sets Us Apart
-              </h4>
-
+              <h4 className="text-2xl font-semibold mb-6">What Sets Us Apart</h4>
               <div className="space-y-5">
                 {differentiators.map((item, index) => (
                   <motion.div
@@ -69,18 +71,14 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* Goal */}
             <div className="max-w-xl">
               <h4 className="text-2xl font-semibold mb-3">Our Goal</h4>
               <p className="dark:text-gray-300 text-gray-900 leading-relaxed">
-                We act as a strategic partner, helping organizations build
-                resilient, compliant, and future-ready security ecosystems that
-                evolve with their business.
+                We partner with teams to build security systems that scale, stay compliant, and actually work when pressure hits.
               </p>
             </div>
           </AnimatedSection>
 
-          {/* Right side - Visuals */}
           <AnimatedSection>
             <div className="grid grid-cols-3 gap-10 mb-16">
               {[Cpu, Server, Database].map((Icon, index) => (
@@ -97,45 +95,35 @@ export function AboutSection() {
               ))}
             </div>
 
-            {/* Radar */}
-            <div className="relative w-full h-64 dark:bg-gradient-to-b dark:from-[#0B0D17] dark:to-[#090b11] bg-gradient-to-b from-white to-slate-100 border border-cyan-500/30 rounded-xl overflow-hidden shadow-2xl dark:shadow-cyan-500/20 shadow-black/10">
-              {/* Rings */}
+            <div className="relative w-full h-64 border border-cyan-500/30 rounded-xl overflow-hidden shadow-2xl dark:shadow-cyan-500/20 shadow-black/10 bg-gradient-to-b dark:from-[#0B0D17] dark:to-[#090b11] from-white to-slate-100">
               <div className="absolute inset-0 flex items-center justify-center">
                 {[1, 2, 3, 4].map((ring) => (
                   <div
                     key={ring}
                     className="absolute rounded-full border border-cyan-400/30"
-                    style={{
-                      width: `${ring * 25}%`,
-                      height: `${ring * 25}%`,
-                    }}
+                    style={{ width: `${ring * 25}%`, height: `${ring * 25}%` }}
                   />
                 ))}
               </div>
 
-              {/* Crosshair */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-px h-full bg-cyan-400/20" />
                 <div className="absolute w-full h-px bg-cyan-400/20" />
               </div>
 
-              {/* Pulse */}
               <motion.div
                 className="absolute inset-0 flex items-center justify-center"
                 animate={{ opacity: [0.6, 1, 0.6] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                style={{ willChange: 'opacity', transform: 'translateZ(0)' }}
               >
                 <div className="w-8 h-8 rounded-full bg-cyan-400/60 blur-sm" />
                 <div className="absolute w-4 h-4 rounded-full bg-cyan-400" />
               </motion.div>
 
-              {/* Sweep */}
               <motion.div
                 className="absolute inset-0"
                 style={{
-                  background:
-                    "conic-gradient(from 0deg, transparent 0deg, rgba(10,188,249,0.5) 30deg, rgba(10,188,249,0.7) 35deg, rgba(10,188,249,0.5) 40deg, transparent 50deg)",
+                  background: "conic-gradient(from 0deg, transparent 0deg, rgba(10,188,249,0.5) 30deg, rgba(10,188,249,0.7) 35deg, rgba(10,188,249,0.5) 40deg, transparent 50deg)",
                   willChange: 'transform',
                   transform: 'translateZ(0)'
                 }}
@@ -144,6 +132,7 @@ export function AboutSection() {
               />
             </div>
           </AnimatedSection>
+
         </div>
       </div>
     </section>

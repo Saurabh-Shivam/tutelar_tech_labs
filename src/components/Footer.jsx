@@ -3,10 +3,30 @@ import { Twitter, Linkedin, Github, Mail } from 'lucide-react';
 
 export function Footer() {
   const links = {
-    product: ['Features', 'Security', 'Pricing', 'Enterprise'],
-    company: ['About Us', 'Careers', 'Press', 'Partners'],
-    resources: ['Blog', 'Documentation', 'Support', 'Community'],
-    legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'GDPR'],
+    product: [
+      { label: 'Features', url: '#' },
+      { label: 'Security', url: '#' },
+      { label: 'Pricing', url: '#' },
+      { label: 'Enterprise', url: '/enterprise-security' },
+    ],
+    company: [
+      { label: 'About Us', url: '/about' },
+      { label: 'Careers', url: '/careers' },
+      { label: 'Press', url: '#' },
+      { label: 'Partners', url: '/partnership' },
+    ],
+    resources: [
+      { label: 'Blog', url: '#' },
+      { label: 'Documentation', url: '#' },
+      { label: 'Support', url: '/contact' },
+      { label: 'Community', url: '#' },
+    ],
+    legal: [
+      { label: 'Privacy Policy', url: '#' },
+      { label: 'Terms of Service', url: '#' },
+      { label: 'Cookie Policy', url: '#' },
+      { label: 'GDPR', url: '#' },
+    ],
   };
 
   const socialLinks = [
@@ -71,8 +91,8 @@ export function Footer() {
             <ul className="space-y-2">
               {links.company.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="dark:text-gray-400 text-gray-700 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
-                    {link}
+                  <a href={link.url} className="dark:text-gray-400 text-gray-700 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -85,8 +105,8 @@ export function Footer() {
             <ul className="space-y-2">
               {links.resources.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="dark:text-gray-400 text-gray-700 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
-                    {link}
+                  <a href={link.url} className="dark:text-gray-400 text-gray-700 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -103,12 +123,12 @@ export function Footer() {
             {links.legal.map((link, index) => (
               <motion.a
                 key={index}
-                href="#"
+                href={link.url}
                 className="dark:text-gray-400 text-gray-700 hover:text-cyan-600 dark:hover:text-cyan-400 text-sm transition-colors"
                 whileHover={{ scale: 1.05 }}
                 style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               >
-                {link}
+                {link.label}
               </motion.a>
             ))}
           </div>
