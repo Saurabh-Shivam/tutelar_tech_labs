@@ -98,6 +98,55 @@ const openings = [
       location: "Bangalore during training period and Madurai ODC",
     },
   },
+   {
+    title: "Security Analyst",
+    description:
+      "Own end-to-end security delivery across enterprise environments. Hands-on work across EDR, SIEM, and security orchestration, with a focus on incident handling and operational ownership.",
+    responsibilities: [
+      "Deploy and maintain EDR and SIEM solutions for customers.",
+      "Deploy and maintain security orchestration platforms for customers.",
+      "Support customers in handling and investigating security incidents.",
+      "Implement and drive security best practices to improve security posture.",
+    ],
+    requirements: [
+      "Basic understanding of cybersecurity concepts.",
+      "Strong written and verbal communication skills.",
+      "Relevant IT or security education or industry exposure preferred.",
+      "Analytical mindset to solve ambiguous security and operational problems.",
+      "Comfortable working in a team driven environment.",
+    ],
+    details: {
+      salary: "2.5-4 lakhs per annum",
+      probation: "4-6 Months",
+      location: "Bangalore during training period and Madurai ODC",
+    },
+  },
+  {
+    title: "Cloud Security Associate",
+    description:
+      "Work closely with DevOps and application teams to embed security into delivery pipelines and cloud-native environments.",
+    responsibilities: [
+      "Partner with DevOps and application teams to integrate security controls into CI/CD pipelines.",
+      "Support API-driven automation for cloud security platforms, SIEM/XDR, ticketing, and monitoring tools.",
+      "Help secure cloud environments across identity, networking, workloads, and data protection.",
+      "Support CSPM, CWPP, CIEM, and container security tooling.",
+      "Review configurations, validate posture, and help fix misconfigurations.",
+      "Assist in vulnerability fixes and cloud security incident investigations.",
+      "Maintain runbooks and documentation for cloud security workflows.",
+    ],
+    requirements: [
+      "Basic understanding of cybersecurity and cloud security concepts.",
+      "Good written and verbal communication skills.",
+      "Relevant IT or security education or industry exposure preferred.",
+      "Analytical mindset for solving complex security problems.",
+      "Self-driven and comfortable working in cross-team environments.",
+    ],
+    details: {
+      salary: "2.5-4 lakhs per annum",
+      probation: "4-6 Months",
+      location: "Bangalore during training period and Madurai ODC",
+    },
+  },
 ];
 
 export function CareerPage() {
